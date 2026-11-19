@@ -1,0 +1,4 @@
+{
+  "action/fill": "CSS-only role from the lab generator; not a Figma variable. Decide: add to Figma or drop from tokens.",
+  "action/fill-hover": "Same as action/fill."
+}

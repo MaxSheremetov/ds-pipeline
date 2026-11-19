@@ -1,0 +1,44 @@
+/* Breadcrumbs. Values come only from tokens. Source of truth: Figma "Breadcrumbs", Northgate.
+   One crumb: 24 tall, 6 of padding each side, label Meta 12/18; the separator is carried by the item and dropped on the last one. */
+.ds-breadcrumbs { display: block; }
+.ds-breadcrumbs__list { display: flex; flex-wrap: wrap; align-items: center; margin: 0; padding: 0; list-style: none; }
+.ds-breadcrumbs__item { display: inline-flex; align-items: center; margin: 0; padding: 0; }
+.ds-breadcrumbs__item:last-child > .ds-breadcrumbs__sep { display: none; }
+
+.ds-breadcrumb {
+  --_fg: var(--ds-component-breadcrumb-fg-link);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ds-spacing-4);
+  box-sizing: border-box;
+  height: var(--ds-spacing-24);
+  padding: 0 var(--ds-spacing-6);
+  color: var(--_fg);
+  font-family: var(--ds-type-font-text), system-ui, sans-serif;
+  font-size: var(--ds-type-fs-meta);
+  line-height: var(--ds-type-line-meta);
+  font-weight: var(--ds-type-weight-regular);
+  letter-spacing: var(--ds-type-track-none);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.ds-breadcrumb--overflow { appearance: none; background: none; border: 0; margin: 0; cursor: pointer; }
+.ds-breadcrumbs__menu { display: flex; flex-direction: column; margin: 0; padding: 0; list-style: none; }
+.ds-breadcrumbs__menu > li { display: flex; }
+.ds-breadcrumbs__menu .ds-breadcrumb { flex: 1; }
+.ds-breadcrumb > svg { flex: none; color: var(--ds-component-breadcrumb-separator); }
+a.ds-breadcrumb:hover, button.ds-breadcrumb:hover { --_fg: var(--ds-component-breadcrumb-fg-link-hover); }
+.ds-breadcrumb[aria-current="page"] { --_fg: var(--ds-component-breadcrumb-fg-current); font-weight: var(--ds-type-weight-semibold); }
+/* Focus: a 2px ring inside the crumb, which is exactly 24 tall (Figma "Focus ring") */
+a.ds-breadcrumb:focus-visible, button.ds-breadcrumb:focus-visible {
+  outline: var(--ds-stroke-focus) solid var(--ds-colour-border-focus);
+  outline-offset: calc(var(--ds-stroke-focus) * -1);
+}
+.ds-breadcrumbs__sep { display: inline-flex; flex: none; color: var(--ds-component-breadcrumb-separator); }
+
+@media (forced-colors: active) {
+  .ds-breadcrumb { forced-color-adjust: none; color: LinkText; }
+  .ds-breadcrumb[aria-current="page"] { color: CanvasText; }
+  .ds-breadcrumb > svg, .ds-breadcrumbs__sep { color: CanvasText; }
+  a.ds-breadcrumb:focus-visible, button.ds-breadcrumb:focus-visible { outline-color: Highlight; }
+}

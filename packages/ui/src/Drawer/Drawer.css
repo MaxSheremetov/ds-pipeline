@@ -1,0 +1,17 @@
+/* Drawer: a panel fixed to one edge, full height (or full width at the bottom), over a scrim. Only the corners facing the page are rounded. */
+.ds-drawer { position: fixed; border-radius: 0; }
+.ds-drawer[data-side="right"], .ds-drawer[data-side="left"] {
+  top: 0;
+  bottom: 0;
+  width: var(--ds-container-drawer);
+  max-width: calc(100vw - var(--ds-spacing-32));
+}
+.ds-drawer[data-side="right"] { right: 0; border-radius: var(--ds-radius-md-8) 0 0 var(--ds-radius-md-8); }
+.ds-drawer[data-side="left"] { left: 0; border-radius: 0 var(--ds-radius-md-8) var(--ds-radius-md-8) 0; }
+.ds-drawer[data-side="bottom"] {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-height: calc(100vh - var(--ds-spacing-32));
+  border-radius: var(--ds-radius-md-8) var(--ds-radius-md-8) 0 0;
+}

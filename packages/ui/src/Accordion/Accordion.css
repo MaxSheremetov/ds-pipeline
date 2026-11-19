@@ -1,0 +1,42 @@
+/* Accordion. Source of truth: Figma "Accordion" page, Accordion item (State). Header row 40 tall; 1 border/subtle line below each item;
+   title Medium 14/22; chevron 16; hover fill; 2 focus ring inside the header; body padding 0 12 12. */
+.ds-accordion { display: flex; flex-direction: column; font-family: var(--ds-type-font-text), system-ui, sans-serif; color: var(--ds-component-accordion-fg); }
+.ds-accordion__item { background: var(--ds-component-accordion-bg); border-bottom: var(--ds-stroke-border) solid var(--ds-colour-border-subtle); }
+.ds-accordion__heading { margin: 0; font: inherit; }
+.ds-accordion__trigger {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-spacing-8);
+  box-sizing: border-box;
+  width: 100%;
+  min-height: var(--ds-spacing-40);
+  margin: 0;
+  padding: 0 var(--ds-spacing-12);
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--ds-component-accordion-fg);
+  font: inherit;
+  font-size: var(--ds-type-fs-body);
+  line-height: var(--ds-type-line-body);
+  font-weight: var(--ds-type-weight-medium);
+  text-align: start;
+  cursor: pointer;
+}
+.ds-accordion__title { flex: 1 1 auto; min-width: 0; }
+.ds-accordion__chevron { flex: none; color: var(--ds-component-accordion-fg); }
+.ds-accordion__trigger[data-state="open"] .ds-accordion__chevron { transform: rotate(180deg); }
+.ds-accordion__trigger:hover:not(:disabled) { background: var(--ds-component-accordion-bg-hover); }
+.ds-accordion__trigger:focus-visible { outline: var(--ds-stroke-focus) solid var(--ds-colour-border-focus); outline-offset: calc(var(--ds-stroke-focus) * -1); }
+.ds-accordion__trigger:disabled { cursor: not-allowed; color: var(--ds-colour-text-dim); background: var(--ds-colour-surface-sunken); }
+.ds-accordion__trigger:disabled .ds-accordion__chevron { color: var(--ds-colour-text-dim); }
+.ds-accordion__body { padding: 0 var(--ds-spacing-12) var(--ds-spacing-12); font-size: var(--ds-type-fs-body); line-height: var(--ds-type-line-body); color: var(--ds-colour-text-dim); }
+.ds-accordion__body[hidden] { display: none; }
+@media (forced-colors: active) {
+  .ds-accordion__item { forced-color-adjust: none; background: Canvas; border-color: CanvasText; }
+  .ds-accordion__trigger, .ds-accordion__title, .ds-accordion__chevron, .ds-accordion__body { color: CanvasText; }
+  .ds-accordion__trigger:hover:not(:disabled) { background: Highlight; color: HighlightText; }
+  .ds-accordion__trigger:hover:not(:disabled) .ds-accordion__chevron { color: HighlightText; }
+  .ds-accordion__trigger:disabled, .ds-accordion__trigger:disabled .ds-accordion__chevron { color: GrayText; background: Canvas; }
+  .ds-accordion__trigger:focus-visible { outline-color: Highlight; }
+}

@@ -1,0 +1,68 @@
+/* Pagination. Values come only from tokens. Source of truth: Figma "Pagination", Northgate.
+   The count on the left, then Previous, a run of page numbers and Next. A page number is the Tab item Enclosed colours (tab/*-enclosed-*), 40 x 40. */
+.ds-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--ds-spacing-12);
+  box-sizing: border-box;
+  padding: var(--ds-spacing-8) 0;
+}
+.ds-pagination__count {
+  margin: 0;
+  color: var(--ds-colour-text-dim);
+  font-family: var(--ds-type-font-mono), ui-monospace, monospace;
+  font-size: var(--ds-type-fs-meta);
+  line-height: var(--ds-type-line-meta);
+  font-weight: var(--ds-type-weight-regular);
+  letter-spacing: var(--ds-type-track-none);
+}
+.ds-pagination__controls { display: flex; align-items: center; gap: var(--ds-spacing-4); }
+.ds-pagination__pages { display: flex; align-items: center; gap: var(--ds-spacing-4); margin: 0; padding: 0; list-style: none; }
+.ds-pagination__pages > li { display: flex; margin: 0; padding: 0; }
+
+.ds-page {
+  --_bg: var(--ds-component-tab-bg-enclosed-default);
+  --_fg: var(--ds-component-tab-fg-enclosed-default);
+  --_bd: var(--ds-component-tab-border-enclosed-default);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: var(--ds-spacing-40);
+  height: var(--ds-spacing-40);
+  margin: 0;
+  padding: 0;
+  border: var(--ds-stroke-border) solid var(--_bd);
+  border-radius: var(--ds-radius-xs-4);
+  background: var(--_bg);
+  color: var(--_fg);
+  font-family: var(--ds-type-font-mono), ui-monospace, monospace;
+  font-size: var(--ds-type-fs-body);
+  line-height: var(--ds-type-line-body);
+  font-weight: var(--ds-type-weight-regular);
+  letter-spacing: var(--ds-type-track-none);
+  cursor: pointer;
+}
+.ds-page:hover:not(:disabled):not([aria-current="page"]) { --_bg: var(--ds-component-tab-bg-enclosed-hover); --_fg: var(--ds-component-tab-fg-enclosed-hover); --_bd: var(--ds-component-tab-border-enclosed-hover); }
+.ds-page[aria-current="page"] { --_bg: var(--ds-component-tab-bg-enclosed-selected); --_fg: var(--ds-component-tab-fg-enclosed-selected); --_bd: var(--ds-component-tab-border-enclosed-selected); cursor: default; }
+.ds-page:disabled { --_bg: var(--ds-component-tab-bg-enclosed-disabled); --_fg: var(--ds-component-tab-fg-enclosed-disabled); --_bd: var(--ds-component-tab-border-enclosed-disabled); cursor: not-allowed; opacity: var(--ds-state-opacity-disabled); }
+/* Focus: a 2px ring in border/focus inside the number (Figma "Focus ring") */
+.ds-page:focus-visible { outline: var(--ds-stroke-focus) solid var(--ds-colour-border-focus); outline-offset: calc(var(--ds-stroke-focus) * -1); }
+/* A gap in the run: not focusable, same 40 x 40 slot */
+.ds-page-gap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--ds-spacing-40);
+  height: var(--ds-spacing-40);
+  color: var(--ds-component-tab-fg-enclosed-default);
+}
+
+@media (forced-colors: active) {
+  .ds-page { forced-color-adjust: none; background: Canvas; color: CanvasText; border-color: transparent; }
+  .ds-page[aria-current="page"] { border-color: CanvasText; }
+  .ds-page:disabled { color: GrayText; opacity: 1; }
+  .ds-page:focus-visible { outline-color: Highlight; }
+  .ds-page-gap { color: CanvasText; }
+}

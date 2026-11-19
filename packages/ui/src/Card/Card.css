@@ -1,0 +1,39 @@
+/* Card. Source of truth: Figma "Card" page (Size). surface/raised, 1 border/default inside, radius md-8; padding and gap per size. */
+.ds-card {
+  --_pad: var(--ds-spacing-16);
+  --_gap: var(--ds-spacing-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--_gap);
+  box-sizing: border-box;
+  min-width: 0;
+  padding: var(--_pad);
+  background: var(--ds-colour-surface-raised);
+  color: var(--ds-colour-text-primary);
+  border: var(--ds-stroke-border) solid var(--ds-colour-border-default);
+  border-radius: var(--ds-radius-md-8);
+  font-family: var(--ds-type-font-text), system-ui, sans-serif;
+  font-size: var(--ds-type-fs-body);
+  line-height: var(--ds-type-line-body);
+  font-weight: var(--ds-type-weight-regular);
+  letter-spacing: var(--ds-type-track-none);
+}
+.ds-card[data-size="medium"] { --_pad: var(--ds-spacing-24); --_gap: var(--ds-spacing-16); }
+.ds-card[data-size="large"] { --_pad: var(--ds-spacing-32); --_gap: var(--ds-spacing-24); }
+.ds-card__header { display: flex; align-items: flex-start; gap: var(--ds-spacing-8); }
+.ds-card__text { display: flex; flex-direction: column; gap: var(--ds-spacing-4); flex: 1 1 auto; min-width: 0; }
+.ds-card__title {
+  margin: 0;
+  font-size: var(--ds-type-fs-section);
+  line-height: var(--ds-type-line-section);
+  font-weight: var(--ds-type-weight-semibold);
+  letter-spacing: var(--ds-type-track-heading);
+  color: var(--ds-colour-text-primary);
+}
+.ds-card__description { font-size: var(--ds-type-fs-meta); line-height: var(--ds-type-line-meta); color: var(--ds-colour-text-dim); }
+.ds-card__action { flex: none; }
+.ds-card__body { min-width: 0; }
+@media (forced-colors: active) {
+  .ds-card { forced-color-adjust: none; background: Canvas; color: CanvasText; border-color: CanvasText; }
+  .ds-card__title, .ds-card__description { color: CanvasText; }
+}

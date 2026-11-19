@@ -1,0 +1,135 @@
+/* Input. Values come only from tokens (--ds-*). Source of truth: Figma "Input" page, Northgate. */
+.ds-input {
+  --_h: var(--ds-spacing-40);
+  --_px: var(--ds-spacing-12);
+  --_r: var(--ds-radius-xs-4);
+  --_rr: var(--ds-radius-md-8); /* focus ring radius = field radius + 4 */
+  --_fs: var(--ds-type-fs-body-lg);
+  --_lh: var(--ds-type-line-body-lg);
+  --_bg: var(--ds-component-input-bg-default-filled);
+  --_bd: var(--ds-component-input-border-default-filled);
+  --_tx: var(--ds-component-input-text-default-filled);
+  --_ph: var(--ds-component-input-text-empty);
+  --_lb: var(--ds-component-input-label-filled);
+  --_lfs: var(--ds-type-fs-label); /* label size steps down with the field: Small uses micro (11/16) */
+  --_llh: var(--ds-type-line-label);
+  --_hi: var(--ds-component-input-hint-filled);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-spacing-6);
+  min-width: 0;
+  font-family: var(--ds-type-font-text), system-ui, sans-serif;
+}
+.ds-input[data-size="medium"] { --_h: var(--ds-spacing-32); --_px: var(--ds-spacing-10); --_fs: var(--ds-type-fs-body); --_lh: var(--ds-type-line-body); }
+.ds-input[data-size="small"] { --_h: var(--ds-spacing-24); --_px: var(--ds-spacing-8); --_r: var(--ds-radius-xxs-2); --_rr: var(--ds-radius-sm-6); --_lfs: var(--ds-type-fs-micro); --_llh: var(--ds-type-line-micro); --_fs: var(--ds-type-fs-meta); --_lh: var(--ds-type-line-meta); }
+
+.ds-input__label {
+  color: var(--_lb);
+  font-size: var(--_lfs);
+  line-height: var(--_llh);
+  font-weight: var(--ds-type-weight-medium);
+  letter-spacing: var(--ds-type-track-caps);
+  text-transform: uppercase; /* Figma: label text case is UPPER */
+}
+
+.ds-input__field {
+  position: relative;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  height: var(--_h);
+  padding: 0 var(--_px);
+  border: var(--ds-stroke-border) solid var(--_bd);
+  border-radius: var(--_r);
+  background: var(--_bg);
+  transition: background-color 120ms ease, border-color 120ms ease;
+}
+.ds-input__control {
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--_tx);
+  font: inherit;
+  font-size: var(--_fs);
+  line-height: var(--_lh);
+  font-weight: var(--ds-type-weight-regular);
+  letter-spacing: var(--ds-type-track-none);
+  text-overflow: ellipsis;
+}
+.ds-input__control::placeholder { color: var(--_ph); opacity: 1; }
+
+.ds-input__message {
+  margin: 0;
+  min-height: var(--ds-type-line-meta);
+  color: var(--_hi);
+  font-size: var(--ds-type-fs-meta);
+  line-height: var(--ds-type-line-meta);
+  font-weight: var(--ds-type-weight-regular);
+  letter-spacing: var(--ds-type-track-none);
+}
+.ds-input__message:empty { display: none; }
+
+/* Hover: not when disabled, read-only or invalid (the error border outranks hover) */
+.ds-input:not([data-disabled]):not([data-readonly]):not([data-invalid]) .ds-input__field:hover {
+  --_bg: var(--ds-component-input-bg-hover-filled);
+  background: var(--ds-component-input-bg-hover-filled);
+  border-color: var(--ds-component-input-border-hover-filled);
+}
+.ds-input:not([data-disabled]):not([data-readonly]):not([data-invalid]) .ds-input__field:hover .ds-input__control {
+  color: var(--ds-component-input-text-hover-filled);
+}
+
+/* Error */
+.ds-input[data-invalid] {
+  --_bg: var(--ds-component-input-bg-error-filled);
+  --_bd: var(--ds-component-input-border-error-filled);
+  --_tx: var(--ds-component-input-text-error-filled);
+  --_ph: var(--ds-component-input-text-error-empty);
+  --_lb: var(--ds-component-input-label-error-filled);
+  --_hi: var(--ds-component-input-hint-error-filled);
+}
+/* Disabled */
+.ds-input[data-disabled] {
+  --_bg: var(--ds-component-input-bg-disabled-filled);
+  --_bd: var(--ds-component-input-border-disabled-filled);
+  --_tx: var(--ds-component-input-text-disabled-filled);
+}
+.ds-input[data-disabled] .ds-input__control { cursor: not-allowed; }
+/* Read-only */
+.ds-input[data-readonly] {
+  --_bg: var(--ds-component-input-bg-read-only-filled);
+  --_bd: var(--ds-component-input-border-read-only-filled);
+  --_tx: var(--ds-component-input-text-read-only-filled);
+  --_ph: var(--ds-component-input-text-read-only-empty);
+  --_lb: var(--ds-component-input-label-read-only-filled);
+  --_hi: var(--ds-component-input-hint-read-only-filled);
+}
+
+/* Focus (and error focus): 2px ring outside the field with a 2px gap, as Button. Ring is absolute, so layout does not move. */
+.ds-input__field:focus-within {
+  background: var(--ds-component-input-bg-focus-filled);
+}
+.ds-input__field:focus-within::after {
+  --_off: calc(var(--ds-spacing-2) + var(--ds-stroke-focus));
+  content: "";
+  position: absolute;
+  inset: calc((var(--_off) + var(--ds-stroke-border)) * -1);
+  border-radius: var(--_rr);
+  box-shadow: inset 0 0 0 var(--ds-stroke-focus) var(--ds-component-input-border-focus-filled);
+  pointer-events: none;
+}
+.ds-input[data-readonly] .ds-input__field:focus-within { background: var(--_bg); }
+
+@media (prefers-reduced-motion: reduce) { .ds-input__field { transition: none; } }
+
+/* Forced colours: say disabled and placeholder in the system grey. */
+@media (forced-colors: active) {
+  .ds-input__control::placeholder { color: GrayText; }
+  .ds-input[data-disabled] .ds-input__field { border-color: GrayText; }
+  .ds-input[data-disabled] .ds-input__control { color: GrayText; }
+}

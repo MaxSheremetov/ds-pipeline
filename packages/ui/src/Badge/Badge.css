@@ -1,0 +1,50 @@
+/* Badge. Values come only from tokens. Source of truth: Figma "Badge" page, Northgate. */
+.ds-badge {
+  --_bg: var(--ds-component-status-bg-neutral-subtle);
+  --_bd: var(--ds-component-status-border-neutral-subtle);
+  --_fg: var(--ds-component-status-fg-neutral-subtle);
+  --_dot: var(--ds-component-status-dot-neutral-subtle);
+  --_h: var(--ds-spacing-20);
+  --_px: var(--ds-spacing-6);
+  --_r: var(--ds-radius-xs-4);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ds-spacing-4);
+  box-sizing: border-box;
+  height: var(--_h);
+  padding: 0 var(--_px);
+  border: var(--ds-stroke-border) solid var(--_bd);
+  border-radius: var(--_r);
+  background: var(--_bg);
+  color: var(--_fg);
+  font-family: var(--ds-type-font-mono), ui-monospace, monospace;
+  font-size: var(--ds-type-fs-micro);
+  line-height: var(--ds-type-line-micro);
+  font-weight: var(--ds-type-weight-medium);
+  letter-spacing: var(--ds-type-track-caps);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.ds-badge[data-size="large"] { --_h: var(--ds-spacing-24); --_px: var(--ds-spacing-8); }
+.ds-badge[data-size="small"] { --_h: var(--ds-spacing-16); --_px: var(--ds-spacing-4); --_r: var(--ds-radius-xxs-2); }
+.ds-badge__dot { flex: none; width: var(--ds-spacing-8); height: var(--ds-spacing-8); background: var(--_dot); }
+.ds-badge[data-status="neutral"][data-style="subtle"] { --_bg: var(--ds-component-status-bg-neutral-subtle); --_bd: var(--ds-component-status-border-neutral-subtle); --_fg: var(--ds-component-status-fg-neutral-subtle); --_dot: var(--ds-component-status-dot-neutral-subtle); }
+.ds-badge[data-status="neutral"][data-style="outline"] { --_bg: var(--ds-component-status-bg-neutral-outline); --_bd: var(--ds-component-status-border-neutral-outline); --_fg: var(--ds-component-status-fg-neutral-outline); --_dot: var(--ds-component-status-dot-neutral-outline); }
+.ds-badge[data-status="neutral"][data-style="solid"] { --_bg: var(--ds-component-status-bg-neutral-solid); --_bd: var(--ds-component-status-border-neutral-solid); --_fg: var(--ds-component-status-fg-neutral-solid); --_dot: var(--ds-component-status-dot-neutral-solid); }
+.ds-badge[data-status="success"][data-style="subtle"] { --_bg: var(--ds-component-status-bg-success-subtle); --_bd: var(--ds-component-status-border-success-subtle); --_fg: var(--ds-component-status-fg-success-subtle); --_dot: var(--ds-component-status-dot-success-subtle); }
+.ds-badge[data-status="success"][data-style="outline"] { --_bg: var(--ds-component-status-bg-success-outline); --_bd: var(--ds-component-status-border-success-outline); --_fg: var(--ds-component-status-fg-success-outline); --_dot: var(--ds-component-status-dot-success-outline); }
+.ds-badge[data-status="success"][data-style="solid"] { --_bg: var(--ds-component-status-bg-success-solid); --_bd: var(--ds-component-status-border-success-solid); --_fg: var(--ds-component-status-fg-success-solid); --_dot: var(--ds-component-status-dot-success-solid); }
+.ds-badge[data-status="warning"][data-style="subtle"] { --_bg: var(--ds-component-status-bg-warning-subtle); --_bd: var(--ds-component-status-border-warning-subtle); --_fg: var(--ds-component-status-fg-warning-subtle); --_dot: var(--ds-component-status-dot-warning-subtle); }
+.ds-badge[data-status="warning"][data-style="outline"] { --_bg: var(--ds-component-status-bg-warning-outline); --_bd: var(--ds-component-status-border-warning-outline); --_fg: var(--ds-component-status-fg-warning-outline); --_dot: var(--ds-component-status-dot-warning-outline); }
+.ds-badge[data-status="warning"][data-style="solid"] { --_bg: var(--ds-component-status-bg-warning-solid); --_bd: var(--ds-component-status-border-warning-solid); --_fg: var(--ds-component-status-fg-warning-solid); --_dot: var(--ds-component-status-dot-warning-solid); }
+.ds-badge[data-status="error"][data-style="subtle"] { --_bg: var(--ds-component-status-bg-error-subtle); --_bd: var(--ds-component-status-border-error-subtle); --_fg: var(--ds-component-status-fg-error-subtle); --_dot: var(--ds-component-status-dot-error-subtle); }
+.ds-badge[data-status="error"][data-style="outline"] { --_bg: var(--ds-component-status-bg-error-outline); --_bd: var(--ds-component-status-border-error-outline); --_fg: var(--ds-component-status-fg-error-outline); --_dot: var(--ds-component-status-dot-error-outline); }
+.ds-badge[data-status="error"][data-style="solid"] { --_bg: var(--ds-component-status-bg-error-solid); --_bd: var(--ds-component-status-border-error-solid); --_fg: var(--ds-component-status-fg-error-solid); --_dot: var(--ds-component-status-dot-error-solid); }
+.ds-badge[data-status="info"][data-style="subtle"] { --_bg: var(--ds-component-status-bg-info-subtle); --_bd: var(--ds-component-status-border-info-subtle); --_fg: var(--ds-component-status-fg-info-subtle); --_dot: var(--ds-component-status-dot-info-subtle); }
+.ds-badge[data-status="info"][data-style="outline"] { --_bg: var(--ds-component-status-bg-info-outline); --_bd: var(--ds-component-status-border-info-outline); --_fg: var(--ds-component-status-fg-info-outline); --_dot: var(--ds-component-status-dot-info-outline); }
+.ds-badge[data-status="info"][data-style="solid"] { --_bg: var(--ds-component-status-bg-info-solid); --_bd: var(--ds-component-status-border-info-solid); --_fg: var(--ds-component-status-fg-info-solid); --_dot: var(--ds-component-status-dot-info-solid); }
+
+/* Forced colours: the status dot is a background, so it would vanish. The label already carries the meaning; keep the dot visible. */
+@media (forced-colors: active) {
+  .ds-badge__dot { background: CanvasText; forced-color-adjust: none; }
+}

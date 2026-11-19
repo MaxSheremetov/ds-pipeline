@@ -1,0 +1,80 @@
+/* Overlay parts shared by Modal, Drawer and Popover. Values come only from tokens.
+   Source of truth: Figma "_Overlay panel base", "_Overlay header base", "_Overlay footer base" (Northgate).
+   Panel: surface/raised, radius md-8, Elevation/3 Overlay. Header and footer rows: padding 12, 1 border/subtle line on the body side. */
+.ds-overlay {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  min-width: 0;
+  overflow: hidden;
+  background: var(--ds-colour-surface-raised);
+  color: var(--ds-colour-text-primary);
+  border-radius: var(--ds-radius-md-8);
+  box-shadow: var(--ds-elevation-overlay);
+  font-family: var(--ds-type-font-text), system-ui, sans-serif;
+  font-size: var(--ds-type-fs-body);
+  line-height: var(--ds-type-line-body);
+  font-weight: var(--ds-type-weight-regular);
+  letter-spacing: var(--ds-type-track-none);
+}
+.ds-overlay:focus { outline: none; }
+.ds-overlay__header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--ds-spacing-8);
+  padding: var(--ds-spacing-12);
+  border-bottom: var(--ds-stroke-border) solid var(--ds-colour-border-subtle);
+  flex: none;
+}
+.ds-overlay__text { display: flex; flex-direction: column; gap: var(--ds-spacing-4); flex: 1 1 auto; min-width: 0; }
+.ds-overlay__title {
+  /* The Figma title row is 24 tall (it holds an optional 16 icon) with the 22 line centred in it */
+  display: flex;
+  align-items: center;
+  gap: var(--ds-spacing-8);
+  min-height: var(--ds-spacing-24);
+  margin: 0;
+  font-size: var(--ds-type-fs-section);
+  line-height: var(--ds-type-line-section);
+  font-weight: var(--ds-type-weight-semibold);
+  color: var(--ds-colour-text-primary);
+}
+.ds-overlay__title > svg { flex: none; }
+.ds-overlay__description {
+  margin: 0;
+  font-size: var(--ds-type-fs-meta);
+  line-height: var(--ds-type-line-meta);
+  color: var(--ds-colour-text-dim);
+}
+.ds-overlay__close { flex: none; }
+.ds-overlay__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-spacing-8);
+  padding: var(--ds-spacing-12);
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: auto;
+}
+.ds-overlay__footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--ds-spacing-8);
+  padding: var(--ds-spacing-12);
+  border-top: var(--ds-stroke-border) solid var(--ds-colour-border-subtle);
+  background: var(--ds-colour-surface-raised);
+  flex: none;
+}
+/* The dimmed page behind a Modal or Drawer: text/primary at the scrim opacity */
+.ds-overlay-scrim {
+  position: fixed;
+  inset: 0;
+  background: color-mix(in srgb, var(--ds-colour-text-primary) var(--ds-state-opacity-scrim), transparent);
+}
+@media (forced-colors: active) {
+  .ds-overlay { forced-color-adjust: none; background: Canvas; color: CanvasText; border: var(--ds-stroke-border) solid CanvasText; box-shadow: none; }
+  .ds-overlay__title, .ds-overlay__description { color: CanvasText; }
+  .ds-overlay__header, .ds-overlay__footer { border-color: CanvasText; background: Canvas; }
+  .ds-overlay-scrim { background: Canvas; opacity: var(--ds-state-opacity-scrim); }
+}

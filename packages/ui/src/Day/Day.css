@@ -1,0 +1,42 @@
+/* Day. Source of truth: Figma "Date picker" page, Day (State). A cell 40 x 36 (container-day-width and -height), radius xs-4,
+   1 border, number in the mono face 12/18. In range has no radius, so a run of days reads as one band. */
+.ds-day {
+  --_bg: var(--ds-component-calendar-day-bg-default);
+  --_fg: var(--ds-component-calendar-day-fg-default);
+  --_bd: var(--ds-component-calendar-day-border);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: var(--ds-container-day-width);
+  height: var(--ds-container-day-height);
+  margin: 0;
+  padding: 0;
+  border: var(--ds-stroke-border) solid var(--_bd);
+  border-radius: var(--ds-radius-xs-4);
+  background: var(--_bg);
+  color: var(--_fg);
+  font-family: var(--ds-type-font-mono), ui-monospace, monospace;
+  font-size: var(--ds-type-fs-meta);
+  line-height: var(--ds-type-line-meta);
+  font-weight: var(--ds-type-weight-regular);
+  cursor: pointer;
+}
+.ds-day:hover:not(:disabled) { --_bg: var(--ds-component-calendar-day-bg-hover); --_fg: var(--ds-component-calendar-day-fg-hover); }
+.ds-day[data-state="selected"] { --_bg: var(--ds-component-calendar-day-bg-selected); --_fg: var(--ds-component-calendar-day-fg-selected); }
+.ds-day[data-state="today"] { --_bg: var(--ds-component-calendar-day-bg-today); --_fg: var(--ds-component-calendar-day-fg-today); --_bd: var(--ds-component-calendar-day-border-today); }
+.ds-day[data-state="outside"] { --_bg: var(--ds-component-calendar-day-bg-outside); --_fg: var(--ds-component-calendar-day-fg-outside); --_bd: var(--ds-component-calendar-day-border-outside); }
+.ds-day[data-state="disabled"] { --_bg: var(--ds-component-calendar-day-bg-disabled); --_fg: var(--ds-component-calendar-day-fg-disabled); cursor: not-allowed; }
+.ds-day[data-state="in-range"] { --_bg: var(--ds-component-calendar-day-bg-in-range); --_fg: var(--ds-component-calendar-day-fg-in-range); --_bd: var(--ds-component-calendar-day-border-in-range); border-radius: var(--ds-radius-none-0); }
+.ds-day[data-state="range-start"] { --_bg: var(--ds-component-calendar-day-bg-range-start); --_fg: var(--ds-component-calendar-day-fg-range-start); --_bd: var(--ds-component-calendar-day-border-range-start); }
+.ds-day[data-state="range-end"] { --_bg: var(--ds-component-calendar-day-bg-range-end); --_fg: var(--ds-component-calendar-day-fg-range-end); --_bd: var(--ds-component-calendar-day-border-range-end); }
+.ds-day:focus-visible { outline: var(--ds-stroke-focus) solid var(--ds-colour-border-focus); outline-offset: calc(var(--ds-stroke-focus) * -1); }
+@media (forced-colors: active) {
+  .ds-day { forced-color-adjust: none; background: Canvas; color: CanvasText; border-color: Canvas; }
+  .ds-day[data-state="today"] { border-color: CanvasText; }
+  .ds-day[data-state="selected"], .ds-day[data-state="range-start"], .ds-day[data-state="range-end"] { background: Highlight; color: HighlightText; border-color: Highlight; }
+  .ds-day[data-state="in-range"] { border-color: Highlight; }
+  .ds-day[data-state="disabled"] { color: GrayText; }
+  .ds-day:hover:not(:disabled) { border-color: Highlight; }
+  .ds-day:focus-visible { outline-color: Highlight; }
+}

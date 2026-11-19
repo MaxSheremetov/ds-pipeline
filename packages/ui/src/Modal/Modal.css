@@ -1,0 +1,12 @@
+/* Modal: a centred dialog over a scrim. Width is a container token (modal-small/medium/large), capped to the viewport. */
+.ds-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: var(--ds-container-modal-medium);
+  max-width: calc(100vw - var(--ds-spacing-32));
+  max-height: calc(100vh - var(--ds-spacing-32));
+}
+.ds-modal[data-size="small"] { width: var(--ds-container-modal-small); }
+.ds-modal[data-size="large"] { width: var(--ds-container-modal-large); }

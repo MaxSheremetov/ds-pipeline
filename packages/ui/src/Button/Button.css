@@ -1,0 +1,113 @@
+/* Button. Values come only from tokens (--ds-*). Source of truth: Figma "Button" page, Northgate. */
+.ds-button {
+  --_bg: var(--ds-component-button-bg-primary-default);
+  --_fg: var(--ds-component-button-fg-primary);
+  --_bd: var(--ds-component-button-border-primary);
+  --_h: var(--ds-spacing-40);
+  --_px: var(--ds-spacing-12);
+  --_r: var(--ds-radius-xs-4);
+  --_fs: var(--ds-type-fs-body);
+  --_lh: var(--ds-type-line-body);
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ds-spacing-8);
+  box-sizing: border-box;
+  min-height: var(--_h); /* a minimum: enlarged text grows the button instead of clipping */
+  min-width: var(--ds-spacing-24); /* WCAG 2.2 target size, also for a short Small label */
+  padding: 0 var(--_px);
+  border: var(--ds-stroke-border) solid var(--_bd);
+  border-radius: var(--_r);
+  background: var(--_bg);
+  color: var(--_fg);
+  font-family: var(--ds-type-font-mono), ui-monospace, monospace;
+  letter-spacing: var(--ds-type-track-caps);
+  font-size: var(--_fs);
+  font-weight: var(--ds-type-weight-medium);
+  line-height: var(--_lh);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 120ms ease, border-color 120ms ease;
+}
+.ds-button[data-size="medium"] { --_h: var(--ds-spacing-32); --_px: var(--ds-spacing-10); --_fs: var(--ds-type-fs-meta); --_lh: var(--ds-type-line-meta); }
+.ds-button[data-size="small"] { --_h: var(--ds-spacing-24); --_px: var(--ds-spacing-8); --_r: var(--ds-radius-xxs-2); --_fs: var(--ds-type-fs-micro); --_lh: var(--ds-type-line-micro); }
+
+.ds-button__label { text-transform: uppercase; } /* Figma: label text case is UPPER */
+.ds-button__icon { display: inline-flex; width: var(--ds-spacing-16); height: var(--ds-spacing-16); flex: none; }
+.ds-button__icon > svg { width: 100%; height: 100%; }
+
+/* Variants: default state */
+.ds-button[data-variant="secondary"] {
+  --_bg: var(--ds-component-button-bg-secondary-default);
+  --_fg: var(--ds-component-button-fg-secondary-default);
+  --_bd: var(--ds-component-button-border-secondary-default);
+}
+.ds-button[data-variant="quiet"] {
+  --_bg: var(--ds-component-button-bg-quiet-default);
+  --_fg: var(--ds-component-button-fg-quiet-default);
+  --_bd: var(--ds-component-button-border-quiet);
+}
+.ds-button[data-variant="danger"] {
+  --_bg: var(--ds-component-button-bg-danger);
+  --_fg: var(--ds-component-button-fg-danger);
+  --_bd: var(--ds-component-button-border-danger);
+}
+
+/* Overlay colour per variant (Figma "Press overlay" layer): hover 8%, pressed 12% */
+.ds-button { --_ov: var(--ds-colour-text-primary); }
+.ds-button[data-variant="primary"] { --_ov: var(--ds-colour-text-on-action); }
+.ds-button[data-variant="danger"] { --_ov: var(--ds-colour-text-primary); } /* dark: a light overlay dropped white-on-red to 4.39 / 4.07 */
+
+/* Hover */
+.ds-button[data-variant="primary"]:hover:not(:disabled) { --_bg: var(--ds-component-button-bg-primary-hover); }
+.ds-button[data-variant="secondary"]:hover:not(:disabled) {
+  --_bg: var(--ds-component-button-bg-secondary-hover);
+  --_fg: var(--ds-component-button-fg-secondary-hover);
+  --_bd: var(--ds-component-button-border-secondary-hover);
+}
+.ds-button[data-variant="quiet"]:hover:not(:disabled) {
+  --_bg: var(--ds-component-button-bg-quiet-hover);
+  --_fg: var(--ds-component-button-fg-quiet-hover);
+}
+.ds-button[data-variant="danger"]:hover:not(:disabled) {
+  --_bg: color-mix(in srgb, var(--_ov) var(--ds-state-overlay-hover), var(--ds-component-button-bg-danger));
+}
+
+/* Pressed: the hover look plus the pressed overlay from the state tokens */
+.ds-button:active:not(:disabled) {
+  background: color-mix(in srgb, var(--_ov) var(--ds-state-overlay-pressed), var(--_bg));
+}
+
+/* Focus: a 2px ring in border/focus outside the button with a 2px gap, for every variant (Figma "Focus ring" layer) */
+.ds-button:focus-visible {
+  outline: var(--ds-stroke-focus) solid var(--ds-colour-border-focus);
+  outline-offset: var(--ds-spacing-2);
+}
+
+/* Disabled */
+.ds-button:disabled,
+.ds-button[aria-disabled="true"] { cursor: not-allowed; opacity: 1; }
+.ds-button:disabled[data-variant="primary"],
+.ds-button:disabled[data-variant="danger"] {
+  --_bg: var(--ds-component-button-bg-filled-disabled);
+  --_fg: var(--ds-component-button-fg-filled-disabled);
+  --_bd: var(--ds-component-button-border-filled-disabled);
+}
+.ds-button:disabled[data-variant="secondary"] {
+  --_bg: var(--ds-component-button-bg-secondary-disabled);
+  --_fg: var(--ds-component-button-fg-secondary-disabled);
+  --_bd: var(--ds-component-button-border-secondary-disabled);
+}
+.ds-button:disabled[data-variant="quiet"] {
+  --_bg: var(--ds-component-button-bg-quiet-disabled);
+  --_fg: var(--ds-component-button-fg-quiet-disabled);
+}
+
+/* Loading: the Spinner (Medium) in the leading 16px slot, label stays (Figma State=Loading) */
+.ds-button[aria-busy="true"] { cursor: progress; }
+@media (prefers-reduced-motion: reduce) {
+  .ds-button { transition: none; }
+}
+

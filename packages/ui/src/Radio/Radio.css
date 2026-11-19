@@ -1,0 +1,106 @@
+/* Radio. Values come only from tokens. Source of truth: Figma "Radio" page, Northgate.
+   Same state tokens as Checkbox (components/checkbox/*): the circle is the input itself, the dot is a ::after. */
+.ds-radio {
+  --_box: var(--ds-spacing-24);
+  --_dot: var(--ds-spacing-12);
+  --_lfs: var(--ds-type-fs-body);
+  --_llh: var(--ds-type-line-body);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ds-spacing-8);
+  cursor: pointer;
+}
+.ds-radio[data-size="medium"] { --_box: var(--ds-spacing-20); --_dot: var(--ds-spacing-10); }
+.ds-radio[data-size="small"] { --_box: var(--ds-spacing-16); --_dot: var(--ds-spacing-8); --_lfs: var(--ds-type-fs-meta); --_llh: var(--ds-type-line-meta); }
+
+.ds-radio__input {
+  --_bg: var(--ds-component-checkbox-box-bg-off-default);
+  --_bd: var(--ds-component-checkbox-box-border-off-default);
+  --_mk: var(--ds-component-checkbox-mark-on-on-default);
+  appearance: none;
+  position: relative;
+  flex: none;
+  box-sizing: border-box;
+  width: var(--_box);
+  height: var(--_box);
+  margin: 0;
+  border: var(--ds-stroke-border) solid var(--_bd);
+  border-radius: 50%;
+  background: var(--_bg);
+  cursor: inherit;
+}
+.ds-radio__input::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: var(--_dot);
+  height: var(--_dot);
+  border-radius: 50%;
+  background: var(--_mk);
+  visibility: hidden;
+}
+.ds-radio__input:checked::after { visibility: visible; }
+
+.ds-radio__input:checked {
+  --_bg: var(--ds-component-checkbox-box-bg-on-default);
+  --_bd: var(--ds-component-checkbox-box-border-on-default);
+}
+.ds-radio__input:hover:not(:disabled) { --_bg: var(--ds-component-checkbox-box-bg-off-hover); }
+.ds-radio__input:hover:not(:disabled):checked { --_bg: var(--ds-component-checkbox-box-bg-on-hover); }
+
+/* Focus: 2px ring in border/focus outside the circle with a 2px gap, as on Checkbox, Button and Input */
+.ds-radio__input:focus-visible {
+  --_bd: var(--ds-component-checkbox-border-off-focus);
+  outline: var(--ds-stroke-focus) solid var(--ds-colour-border-focus);
+  outline-offset: var(--ds-spacing-2);
+}
+
+.ds-radio__input:disabled {
+  --_bg: var(--ds-component-checkbox-box-bg-off-disabled);
+  --_bd: var(--ds-component-checkbox-box-border-off-disabled);
+  --_mk: var(--ds-component-checkbox-mark-on-on-disabled);
+  cursor: not-allowed;
+}
+
+.ds-radio__label {
+  font-family: var(--ds-type-font-text), system-ui, sans-serif;
+  font-size: var(--_lfs);
+  line-height: var(--_llh);
+  font-weight: var(--ds-type-weight-regular);
+  letter-spacing: var(--ds-type-track-none);
+  color: var(--ds-component-checkbox-title-off-default);
+}
+.ds-radio:has(.ds-radio__input:disabled) { cursor: not-allowed; }
+.ds-radio:has(.ds-radio__input:disabled) .ds-radio__label { color: var(--ds-component-checkbox-title-off-disabled); }
+
+/* Group */
+.ds-radio-group { margin: 0; padding: 0; border: 0; min-width: 0; display: grid; gap: var(--ds-spacing-8); }
+.ds-radio-group__legend {
+  padding: 0;
+  font-family: var(--ds-type-font-text), system-ui, sans-serif;
+  font-size: var(--ds-type-fs-label);
+  line-height: var(--ds-type-line-label);
+  font-weight: var(--ds-type-weight-medium);
+  letter-spacing: var(--ds-type-track-caps);
+  text-transform: uppercase; /* same as the Input label: a legend is the label of a field */
+  color: var(--ds-component-input-label-filled);
+}
+.ds-radio-group__message {
+  font-family: var(--ds-type-font-text), system-ui, sans-serif;
+  font-size: var(--ds-type-fs-meta);
+  line-height: var(--ds-type-line-meta);
+  color: var(--ds-component-input-hint-filled);
+}
+.ds-radio-group__message[data-kind="error"] { color: var(--ds-component-input-hint-error-filled); }
+.ds-radio-group__options { display: flex; flex-direction: column; gap: var(--ds-spacing-8); align-items: flex-start; }
+.ds-radio-group[data-orientation="horizontal"] .ds-radio-group__options { flex-direction: row; flex-wrap: wrap; gap: var(--ds-spacing-8) var(--ds-spacing-24); }
+
+@media (forced-colors: active) {
+  .ds-radio__input { border-color: ButtonText; background: Field; forced-color-adjust: none; }
+  .ds-radio__input::after { background: CanvasText; forced-color-adjust: none; }
+  .ds-radio__input:disabled { border-color: GrayText; }
+  .ds-radio__input:disabled::after { background: GrayText; }
+  .ds-radio__label, .ds-radio-group__legend, .ds-radio-group__message { color: CanvasText; }
+  .ds-radio:has(.ds-radio__input:disabled) .ds-radio__label { color: GrayText; }
+}

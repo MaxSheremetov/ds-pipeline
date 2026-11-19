@@ -1,0 +1,21 @@
+{
+  "name": "ds-pipeline",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "tokens:build": "node tools/gen-component-tokens.mjs && npm run build -w @ds/tokens",
+    "test": "npm test -w @ds/ui",
+    "storybook:build": "npm run build -w @ds/storybook",
+    "gates": "node tools/run-gates.mjs",
+    "typecheck": "node tools/check-typecheck.mjs",
+    "ci": "npm ci && npm run tokens:build && npm run test && npm run storybook:build && npm run gates"
+  },
+  "devDependencies": {
+    "playwright": "^1.63.0"
+  }
+}

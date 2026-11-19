@@ -1,0 +1,750 @@
+{
+ "_about": "Geometry read from the Northgate Figma file (HjgaAgZ5Znwqqsk12oCdC1) on 2026-11-18, one entry per size. Identical across every variant and state in Figma (Button 72 variants, Checkbox 36). Refresh with tools/figma-metrics-export.js through use_figma. Units are px. Select: field h/px/gap/radius/value fs,lh and option oh/opx/ofs/olh read from the Select option set; menuLeft/menuWidth/menuGap are not in Figma, they are the spec's menu rule (as wide as the field, same left edge, 8 below) and are measured in the browser. Input: field box, label and hint type, spacing between label, field and hint (stack). The Figma Input has an 8 gap for icon slots; the code Input has no icon slots, so gap is not compared. Icon button: box, icon size. Badge: height, padding, gap, radius, dot, label type. Table: one density. Cell and header height 40, padding 10, row 40 (the cells are 39 plus a 1px row border). selectPanel: the panel of a searchable, multiple Select (search area height, checkbox box 16 with radius 4, tick 8, footer 41 = 8 + 24 Clear button + 8 + 1 divider; Figma menu base Search, option base Checkbox, Footer). Radio: circle, dot, gap, label type (the circle is fully round, radius not compared). Toggle: track w/h, knob, inset (padding of the track), gap, label type. Chip: height, left and right padding (right is 4 because the Figma chip always shows its remove button), gap, radius, icon, remove button 24, label type (14/22 in all three sizes, as in Figma). Read 2026-11-18. Step 6 (read 2026-11-18): Card pad/gap/radius per size; Avatar box; Step disc 28 and disc-to-label gap 8; Day 40x36 radius 4; Accordion header 40 and body left padding 12; Dropzone padding 32/12, gap 8, radius 8; File row padding 8, gap 8, radius 4, height 50 (Done); Empty state padding 48/12, gap 12, text gap 6, icon 48, text max 420 (container token; Figma text width is 536 because the frame fills, the cap is the spec rule). Step 7 (read 2026-11-18): Date picker 306x323 (padding 12, gap 8, row gap 2, weekday row 20, header 32, footer 33 = 8 + 24 Button + 1 border); Date range 618x361 (gap 12, month gap 32). Figma had the Date range panel at 650 with a fixed 624 header; fixed in Figma to hug the months (592 + 24 + 2 = 618).",
+ "exported": "2026-11-18",
+ "button": {
+  "large": {
+   "h": 40,
+   "px": 12,
+   "gap": 8,
+   "radius": 4,
+   "fs": 14,
+   "lh": 22
+  },
+  "medium": {
+   "h": 32,
+   "px": 10,
+   "gap": 8,
+   "radius": 4,
+   "fs": 12,
+   "lh": 18
+  },
+  "small": {
+   "h": 24,
+   "px": 8,
+   "gap": 8,
+   "radius": 2,
+   "fs": 11,
+   "lh": 16
+  }
+ },
+ "checkbox": {
+  "large": {
+   "box": 24,
+   "mark": 16,
+   "radius": 4,
+   "gap": 8,
+   "fs": 14,
+   "lh": 22
+  },
+  "medium": {
+   "box": 20,
+   "mark": 12,
+   "radius": 4,
+   "gap": 8,
+   "fs": 14,
+   "lh": 22
+  },
+  "small": {
+   "box": 16,
+   "mark": 10,
+   "radius": 2,
+   "gap": 8,
+   "fs": 12,
+   "lh": 18
+  }
+ },
+ "select": {
+  "large": {
+   "h": 40,
+   "px": 12,
+   "gap": 8,
+   "radius": 4,
+   "fs": 16,
+   "lh": 24,
+   "oh": 40,
+   "opx": 12,
+   "ofs": 14,
+   "olh": 22,
+   "menuLeft": 0,
+   "menuWidth": 0,
+   "menuGap": 8
+  },
+  "medium": {
+   "h": 32,
+   "px": 10,
+   "gap": 8,
+   "radius": 4,
+   "fs": 14,
+   "lh": 22,
+   "oh": 32,
+   "opx": 10,
+   "ofs": 14,
+   "olh": 22,
+   "menuLeft": 0,
+   "menuWidth": 0,
+   "menuGap": 8
+  },
+  "small": {
+   "h": 24,
+   "px": 8,
+   "gap": 8,
+   "radius": 2,
+   "fs": 12,
+   "lh": 18,
+   "oh": 24,
+   "opx": 8,
+   "ofs": 12,
+   "olh": 18,
+   "menuLeft": 0,
+   "menuWidth": 0,
+   "menuGap": 8
+  }
+ },
+ "input": {
+  "large": {
+   "h": 40,
+   "px": 12,
+   "radius": 4,
+   "fs": 16,
+   "lh": 24,
+   "labelFs": 12,
+   "labelLh": 18,
+   "hintFs": 12,
+   "hintLh": 18,
+   "stack": 6
+  },
+  "medium": {
+   "h": 32,
+   "px": 10,
+   "radius": 4,
+   "fs": 14,
+   "lh": 22,
+   "labelFs": 12,
+   "labelLh": 18,
+   "hintFs": 12,
+   "hintLh": 18,
+   "stack": 6
+  },
+  "small": {
+   "h": 24,
+   "px": 8,
+   "radius": 2,
+   "fs": 12,
+   "lh": 18,
+   "labelFs": 11,
+   "labelLh": 16,
+   "hintFs": 12,
+   "hintLh": 18,
+   "stack": 6
+  }
+ },
+ "iconButton": {
+  "large": {
+   "box": 40,
+   "h": 40,
+   "radius": 4,
+   "icon": 20
+  },
+  "medium": {
+   "box": 32,
+   "h": 32,
+   "radius": 4,
+   "icon": 16
+  },
+  "small": {
+   "box": 24,
+   "h": 24,
+   "radius": 2,
+   "icon": 16
+  }
+ },
+ "badge": {
+  "large": {
+   "h": 24,
+   "px": 8,
+   "gap": 4,
+   "radius": 4,
+   "dot": 8,
+   "fs": 11,
+   "lh": 16
+  },
+  "medium": {
+   "h": 20,
+   "px": 6,
+   "gap": 4,
+   "radius": 4,
+   "dot": 8,
+   "fs": 11,
+   "lh": 16
+  },
+  "small": {
+   "h": 16,
+   "px": 4,
+   "gap": 4,
+   "radius": 2,
+   "dot": 8,
+   "fs": 11,
+   "lh": 16
+  }
+ },
+ "table": {
+  "cell": {
+   "h": 40,
+   "px": 10,
+   "fs": 14,
+   "lh": 22
+  },
+  "header": {
+   "h": 40,
+   "px": 10,
+   "fs": 12,
+   "lh": 18
+  },
+  "row": {
+   "h": 40
+  }
+ },
+ "selectPanel": {
+  "large": {
+   "searchH": 57,
+   "boxW": 16,
+   "boxH": 16,
+   "boxRadius": 4,
+   "tickW": 8,
+   "footerH": 41,
+   "menuLeft": 0,
+   "menuWidth": 0,
+   "menuGap": 8
+  },
+  "medium": {
+   "searchH": 49,
+   "boxW": 16,
+   "boxH": 16,
+   "boxRadius": 4,
+   "tickW": 8,
+   "footerH": 41,
+   "menuLeft": 0,
+   "menuWidth": 0,
+   "menuGap": 8
+  },
+  "small": {
+   "searchH": 41,
+   "boxW": 16,
+   "boxH": 16,
+   "boxRadius": 4,
+   "tickW": 8,
+   "footerH": 41,
+   "menuLeft": 0,
+   "menuWidth": 0,
+   "menuGap": 8
+  }
+ },
+ "radio": {
+  "large": {
+   "box": 24,
+   "dot": 12,
+   "gap": 8,
+   "fs": 14,
+   "lh": 22
+  },
+  "medium": {
+   "box": 20,
+   "dot": 10,
+   "gap": 8,
+   "fs": 14,
+   "lh": 22
+  },
+  "small": {
+   "box": 16,
+   "dot": 8,
+   "gap": 8,
+   "fs": 12,
+   "lh": 18
+  }
+ },
+ "toggle": {
+  "large": {
+   "w": 40,
+   "h": 24,
+   "knob": 20,
+   "inset": 2,
+   "gap": 8,
+   "fs": 14,
+   "lh": 22
+  },
+  "medium": {
+   "w": 32,
+   "h": 20,
+   "knob": 16,
+   "inset": 2,
+   "gap": 8,
+   "fs": 14,
+   "lh": 22
+  },
+  "small": {
+   "w": 24,
+   "h": 16,
+   "knob": 12,
+   "inset": 2,
+   "gap": 8,
+   "fs": 12,
+   "lh": 18
+  }
+ },
+ "chip": {
+  "large": {
+   "h": 40,
+   "pl": 8,
+   "pr": 4,
+   "gap": 4,
+   "radius": 4,
+   "icon": 16,
+   "action": 24,
+   "fs": 14,
+   "lh": 22
+  },
+  "medium": {
+   "h": 32,
+   "pl": 8,
+   "pr": 4,
+   "gap": 4,
+   "radius": 4,
+   "icon": 16,
+   "action": 24,
+   "fs": 12,
+   "lh": 18
+  },
+  "small": {
+   "h": 24,
+   "pl": 8,
+   "pr": 4,
+   "gap": 4,
+   "radius": 2,
+   "icon": 16,
+   "action": 24,
+   "fs": 11,
+   "lh": 16
+  }
+ },
+ "notice": {
+  "default": {
+   "h": 68,
+   "icon": 24,
+   "iconLeft": 18,
+   "pt": 12,
+   "gap": 8,
+   "radius": 4,
+   "rail": 6,
+   "titleFs": 14,
+   "titleLh": 22,
+   "msgFs": 12,
+   "msgLh": 18
+  }
+ },
+ "toast": {
+  "default": {
+   "w": 420,
+   "h": 40,
+   "pl": 12,
+   "pr": 8,
+   "pt": 8,
+   "gap": 8,
+   "radius": 8,
+   "icon": 24,
+   "iconLeft": 12,
+   "fs": 14,
+   "lh": 22,
+   "close": 32,
+   "rail": 4
+  }
+ },
+ "interactiveIcon": {
+  "large": {
+   "box": 40,
+   "icon": 20
+  },
+  "medium": {
+   "box": 32,
+   "icon": 16
+  },
+  "small": {
+   "box": 24,
+   "icon": 12
+  }
+ },
+ "progress": {
+  "large": {
+   "track": 8,
+   "gap": 6,
+   "row": 18,
+   "fs": 12,
+   "lh": 18
+  },
+  "medium": {
+   "track": 6,
+   "gap": 6,
+   "row": 18,
+   "fs": 12,
+   "lh": 18
+  },
+  "small": {
+   "track": 4,
+   "gap": 6,
+   "row": 18,
+   "fs": 12,
+   "lh": 18
+  }
+ },
+ "skeleton": {
+  "text": {
+   "w": 240,
+   "h": 14,
+   "radius": 9999
+  },
+  "block": {
+   "w": 240,
+   "h": 96,
+   "radius": 4
+  },
+  "circle": {
+   "w": 40,
+   "h": 40,
+   "radius": 9999
+  }
+ },
+ "tooltip": {
+  "default": {
+   "h": 30,
+   "pl": 8,
+   "pt": 6,
+   "radius": 4,
+   "fs": 12,
+   "lh": 18,
+   "arrowW": 8,
+   "arrowH": 4
+  }
+ },
+ "spinner": {
+  "large": {
+   "box": 20
+  },
+  "medium": {
+   "box": 16
+  },
+  "small": {
+   "box": 12
+  }
+ },
+ "tabs": {
+  "underline": {
+   "h": 40,
+   "pl": 12,
+   "pr": 12,
+   "gap": 8,
+   "radius": 4,
+   "icon": 16,
+   "fs": 14,
+   "lh": 22,
+   "countFs": 12,
+   "countLh": 18,
+   "mark": 2,
+   "bar": 41
+  },
+  "segmented": {
+   "h": 40,
+   "pl": 12,
+   "gap": 8,
+   "radius": 0,
+   "fs": 14,
+   "lh": 22,
+   "bar": 42,
+   "trackGap": 2,
+   "trackRadius": 4
+  }
+ },
+ "breadcrumb": {
+  "default": {
+   "h": 24,
+   "pl": 6,
+   "pr": 6,
+   "gap": 4,
+   "icon": 16,
+   "sep": 16,
+   "fs": 12,
+   "lh": 18
+  },
+  "overflow": {
+   "h": 24,
+   "pl": 6,
+   "pr": 6,
+   "fs": 12,
+   "lh": 18
+  }
+ },
+ "pagination": {
+  "default": {
+   "page": 40,
+   "pageH": 40,
+   "pageRadius": 4,
+   "pageFs": 14,
+   "pageLh": 22,
+   "pt": 8,
+   "gap": 12,
+   "controlsGap": 4,
+   "pagesGap": 4,
+   "countFs": 12,
+   "countLh": 18
+  }
+ },
+ "nav": {
+  "item": {
+   "h": 40,
+   "w": 248,
+   "pl": 12,
+   "pr": 8,
+   "gap": 8,
+   "icon": 20,
+   "fs": 14,
+   "lh": 22,
+   "countFs": 12,
+   "countLh": 18,
+   "marker": 3,
+   "listGap": 2
+  },
+  "rail": {
+   "w": 40,
+   "h": 40,
+   "icon": 20
+  }
+ },
+ "modal": {
+  "small": {
+   "w": 420,
+   "radius": 8,
+   "hp": 12,
+   "hGap": 8,
+   "hH": 71,
+   "titleFs": 19,
+   "titleLh": 22,
+   "descFs": 12,
+   "descLh": 18,
+   "textGap": 4,
+   "close": 40,
+   "bp": 12,
+   "bGap": 8,
+   "fp": 12,
+   "fH": 57
+  },
+  "medium": {
+   "w": 560,
+   "radius": 8,
+   "hp": 12,
+   "hGap": 8,
+   "hH": 71,
+   "titleFs": 19,
+   "titleLh": 22,
+   "descFs": 12,
+   "descLh": 18,
+   "textGap": 4,
+   "close": 40,
+   "bp": 12,
+   "bGap": 8,
+   "fp": 12,
+   "fH": 57
+  },
+  "large": {
+   "w": 760,
+   "radius": 8,
+   "hp": 12,
+   "hGap": 8,
+   "hH": 71,
+   "titleFs": 19,
+   "titleLh": 22,
+   "descFs": 12,
+   "descLh": 18,
+   "textGap": 4,
+   "close": 40,
+   "bp": 12,
+   "bGap": 8,
+   "fp": 12,
+   "fH": 57
+  }
+ },
+ "drawer": {
+  "right": {
+   "w": 560,
+   "hp": 12,
+   "hGap": 8,
+   "hH": 71,
+   "titleFs": 19,
+   "titleLh": 22,
+   "descFs": 12,
+   "descLh": 18,
+   "textGap": 4,
+   "close": 40,
+   "bp": 12,
+   "bGap": 8,
+   "fp": 12,
+   "fH": 57,
+   "rTL": 8,
+   "rTR": 0,
+   "rBL": 8,
+   "rBR": 0
+  },
+  "left": {
+   "w": 560,
+   "hp": 12,
+   "hGap": 8,
+   "hH": 71,
+   "titleFs": 19,
+   "titleLh": 22,
+   "descFs": 12,
+   "descLh": 18,
+   "textGap": 4,
+   "close": 40,
+   "bp": 12,
+   "bGap": 8,
+   "fp": 12,
+   "fH": 57,
+   "rTL": 0,
+   "rTR": 8,
+   "rBL": 0,
+   "rBR": 8
+  },
+  "bottom": {
+   "hp": 12,
+   "hGap": 8,
+   "hH": 71,
+   "titleFs": 19,
+   "titleLh": 22,
+   "descFs": 12,
+   "descLh": 18,
+   "textGap": 4,
+   "close": 40,
+   "bp": 12,
+   "bGap": 8,
+   "fp": 12,
+   "fH": 57,
+   "rTL": 8,
+   "rTR": 8,
+   "rBL": 0,
+   "rBR": 0
+  }
+ },
+ "popover": {
+  "off": {
+   "w": 320,
+   "radius": 8,
+   "bp": 12,
+   "bGap": 8
+  },
+  "on": {
+   "w": 320,
+   "radius": 8,
+   "bp": 12,
+   "bGap": 8,
+   "fp": 12,
+   "fH": 57
+  }
+ },
+ "card": {
+  "small": {
+   "pad": 16,
+   "gap": 8,
+   "radius": 8
+  },
+  "medium": {
+   "pad": 24,
+   "gap": 16,
+   "radius": 8
+  },
+  "large": {
+   "pad": 32,
+   "gap": 24,
+   "radius": 8
+  }
+ },
+ "avatar": {
+  "large": {
+   "box": 40
+  },
+  "medium": {
+   "box": 32
+  },
+  "small": {
+   "box": 24
+  }
+ },
+ "step": {
+  "default": {
+   "disc": 28,
+   "itemGap": 8
+  }
+ },
+ "day": {
+  "default": {
+   "w": 40,
+   "h": 36,
+   "radius": 4
+  }
+ },
+ "accordion": {
+  "default": {
+   "headerH": 40,
+   "bodyPl": 12
+  }
+ },
+ "dropzone": {
+  "default": {
+   "pt": 32,
+   "pl": 12,
+   "gap": 8,
+   "radius": 8
+  }
+ },
+ "fileRow": {
+  "default": {
+   "pad": 8,
+   "gap": 8,
+   "radius": 4,
+   "h": 50
+  }
+ },
+ "empty": {
+  "default": {
+   "pt": 48,
+   "pl": 12,
+   "gap": 12,
+   "textGap": 6,
+   "icon": 48,
+   "textMax": 420
+  }
+ },
+ "datePicker": {
+  "default": {
+   "w": 306,
+   "h": 361,
+   "gridH": 226,
+   "pad": 12,
+   "gap": 8,
+   "radius": 8,
+   "rowGap": 2,
+   "weekdayH": 20,
+   "footerH": 33,
+   "headerH": 32
+  }
+ },
+ "dateRange": {
+  "default": {
+   "w": 618,
+   "h": 399,
+   "gridH": 226,
+   "pad": 12,
+   "gap": 12,
+   "radius": 8,
+   "monthsGap": 32,
+   "footerH": 33,
+   "headerH": 32
+  }
+ }
+}

@@ -1,0 +1,58 @@
+/* Nav: the nav item (expanded) and the nav rail item (icon only). Values come only from tokens (nav/*).
+   Source of truth: Figma "Navigation", Northgate. 40 tall, no disabled state by design: a destination a person cannot reach is hidden or marked, not greyed. */
+.ds-nav { display: block; }
+.ds-nav__list { display: flex; flex-direction: column; gap: var(--ds-spacing-2); margin: 0; padding: 0; list-style: none; }
+.ds-nav__list > li { display: flex; flex-direction: column; margin: 0; padding: 0; }
+
+.ds-nav-item {
+  --_bg: var(--ds-component-nav-bg-default);
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--ds-spacing-8);
+  box-sizing: border-box;
+  width: 100%;
+  min-height: var(--ds-spacing-40);
+  height: var(--ds-spacing-40);
+  margin: 0;
+  padding: 0 var(--ds-spacing-8) 0 var(--ds-spacing-12);
+  border: 0;
+  border-radius: 0;
+  background: var(--_bg);
+  color: var(--ds-component-nav-fg);
+  font-family: var(--ds-type-font-text), system-ui, sans-serif;
+  font-size: var(--ds-type-fs-body);
+  line-height: var(--ds-type-line-body);
+  font-weight: var(--ds-type-weight-regular);
+  letter-spacing: var(--ds-type-track-none);
+  text-align: start;
+  text-decoration: none;
+  cursor: pointer;
+}
+.ds-nav-item > svg { flex: none; }
+.ds-nav-item__label { flex: 1 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ds-nav-item__count { flex: none; font-size: var(--ds-type-fs-meta); line-height: var(--ds-type-line-meta); }
+.ds-nav-item:hover { --_bg: var(--ds-component-nav-bg-hover); }
+.ds-nav-item[aria-current="page"] { --_bg: var(--ds-component-nav-bg-active); font-weight: var(--ds-type-weight-semibold); }
+.ds-nav-item[aria-current="page"]:hover { --_bg: var(--ds-component-nav-bg-active-hover); }
+/* The marker bar: 3 wide, the full height of the item, on the active destination (Figma "Marker", nav/marker) */
+.ds-nav-item[aria-current="page"]::before {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: 0;
+  width: calc(var(--ds-spacing-2) + var(--ds-stroke-border));
+  background: var(--ds-component-nav-marker);
+}
+/* Focus: a 2px ring in border/focus inside the item (Figma "Focus ring") */
+.ds-nav-item:focus-visible { outline: var(--ds-stroke-focus) solid var(--ds-colour-border-focus); outline-offset: calc(var(--ds-stroke-focus) * -1); }
+
+/* Rail item: 40 x 40, the icon centred; the name is for assistive technology and the tooltip */
+.ds-nav-item[data-rail="true"] { width: var(--ds-spacing-40); justify-content: center; padding: 0; }
+
+@media (forced-colors: active) {
+  .ds-nav-item { forced-color-adjust: none; background: Canvas; color: LinkText; }
+  .ds-nav-item[aria-current="page"] { color: CanvasText; }
+  .ds-nav-item[aria-current="page"]::before { background: CanvasText; }
+  .ds-nav-item:focus-visible { outline-color: Highlight; }
+}

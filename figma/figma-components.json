@@ -1,0 +1,1866 @@
+{
+  "exported": "2026-11-18",
+  "source": "Northgate \u00b7 2 Colour, components/button/*, input/*, table-*/*, checkbox/*, menu/*, status/*, tab/*, nav/*, breadcrumb/*, read live by /sync-tokens, stepper/*, calendar-day/*, accordion/*",
+  "tokens": {
+    "components/button/bg-standalone": {
+      "v": "#000000",
+      "via": "surface/transparent"
+    },
+    "components/button/bg-primary-default": {
+      "v": "#BEF274",
+      "via": "action/default"
+    },
+    "components/button/bg-primary-hover": {
+      "v": "#B1E369",
+      "via": "action/hover"
+    },
+    "components/button/bg-primary-focus": {
+      "v": "#BEF274",
+      "via": "action/default"
+    },
+    "components/button/bg-filled-disabled": {
+      "v": "#EBEDEE",
+      "via": "surface/sunken"
+    },
+    "components/button/bg-secondary-default": {
+      "v": "#FDFDFE",
+      "via": "surface/raised"
+    },
+    "components/button/bg-secondary-hover": {
+      "v": "#E4E8E9",
+      "via": "surface/hover"
+    },
+    "components/button/bg-secondary-focus": {
+      "v": "#FDFDFE",
+      "via": "surface/raised"
+    },
+    "components/button/bg-secondary-disabled": {
+      "v": "#EBEDEE",
+      "via": "surface/sunken"
+    },
+    "components/button/bg-quiet-default": {
+      "v": "#000000",
+      "via": "surface/transparent"
+    },
+    "components/button/bg-quiet-hover": {
+      "v": "#E4E8E9",
+      "via": "surface/hover"
+    },
+    "components/button/bg-quiet-focus": {
+      "v": "#000000",
+      "via": "surface/transparent"
+    },
+    "components/button/bg-quiet-disabled": {
+      "v": "#000000",
+      "via": "surface/transparent"
+    },
+    "components/button/bg-danger": {
+      "v": "#9F4643",
+      "via": "status/negative"
+    },
+    "components/button/fg-standalone": {
+      "v": "#242727",
+      "via": "text/primary"
+    },
+    "components/button/fg-primary": {
+      "v": "#1D2B05",
+      "via": "text/on-action"
+    },
+    "components/button/fg-filled-disabled": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/button/fg-secondary-default": {
+      "v": "#242727",
+      "via": "text/primary"
+    },
+    "components/button/fg-secondary-hover": {
+      "v": "#242727",
+      "via": "text/primary"
+    },
+    "components/button/fg-secondary-focus": {
+      "v": "#242727",
+      "via": "text/primary"
+    },
+    "components/button/fg-secondary-disabled": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/button/fg-quiet-default": {
+      "v": "#4D6E03",
+      "via": "text/action"
+    },
+    "components/button/fg-quiet-hover": {
+      "v": "#242727",
+      "via": "text/primary"
+    },
+    "components/button/fg-quiet-focus": {
+      "v": "#4D6E03",
+      "via": "text/action"
+    },
+    "components/button/fg-quiet-disabled": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/button/fg-danger": {
+      "v": "#FDFDFE",
+      "via": "text/inverse"
+    },
+    "components/button/border-standalone": {
+      "v": "#000000",
+      "via": "border/transparent"
+    },
+    "components/button/border-primary": {
+      "v": "#000000",
+      "via": "border/transparent"
+    },
+    "components/button/border-filled-disabled": {
+      "v": "#000000",
+      "via": "border/transparent"
+    },
+    "components/button/border-secondary-default": {
+      "v": "#648F02",
+      "via": "border/action"
+    },
+    "components/button/border-secondary-hover": {
+      "v": "#798284",
+      "via": "border/strong"
+    },
+    "components/button/border-secondary-focus": {
+      "v": "#648F02",
+      "via": "border/action"
+    },
+    "components/button/border-secondary-disabled": {
+      "v": "#CFD7D9",
+      "via": "border/default"
+    },
+    "components/button/border-quiet": {
+      "v": "#000000",
+      "via": "border/transparent"
+    },
+    "components/button/border-danger": {
+      "v": "#000000",
+      "via": "border/transparent"
+    },
+    "components/button/bg-primary-loading": {
+      "v": "#BEF274",
+      "via": "action/default"
+    },
+    "components/button/bg-secondary-loading": {
+      "v": "#FDFDFE",
+      "via": "surface/raised"
+    },
+    "components/button/fg-secondary-loading": {
+      "v": "#242727",
+      "via": "text/primary"
+    },
+    "components/button/border-secondary-loading": {
+      "v": "#648F02",
+      "via": "border/action"
+    },
+    "components/button/bg-quiet-loading": {
+      "v": "#000000",
+      "via": "surface/transparent"
+    },
+    "components/button/fg-quiet-loading": {
+      "v": "#4D6E03",
+      "via": "text/action"
+    },
+    "components/input/bg-standalone": {
+      "v": "#FDFDFE",
+      "via": "surface/raised"
+    },
+    "components/input/bg-default-empty": {
+      "v": "#FDFDFE",
+      "via": "surface/raised"
+    },
+    "components/input/bg-hover-empty": {
+      "v": "#E4E8E9",
+      "via": "surface/hover"
+    },
+    "components/input/bg-focus-empty": {
+      "v": "#FDFDFE",
+      "via": "surface/raised"
+    },
+    "components/input/bg-disabled-empty": {
+      "v": "#EBEDEE",
+      "via": "surface/sunken"
+    },
+    "components/input/bg-default-filled": {
+      "v": "#FDFDFE",
+      "via": "surface/raised"
+    },
+    "components/input/bg-hover-filled": {
+      "v": "#E4E8E9",
+      "via": "surface/hover"
+    },
+    "components/input/bg-focus-filled": {
+      "v": "#FDFDFE",
+      "via": "surface/raised"
+    },
+    "components/input/bg-disabled-filled": {
+      "v": "#EBEDEE",
+      "via": "surface/sunken"
+    },
+    "components/input/bg-error-empty": {
+      "v": "#FDFDFE",
+      "via": "surface/raised"
+    },
+    "components/input/bg-error-filled": {
+      "v": "#FDFDFE",
+      "via": "surface/raised"
+    },
+    "components/input/bg-read-only-empty": {
+      "v": "#EBEDEE",
+      "via": "surface/sunken"
+    },
+    "components/input/bg-read-only-filled": {
+      "v": "#EBEDEE",
+      "via": "surface/sunken"
+    },
+    "components/input/border-standalone": {
+      "v": "#798284",
+      "via": "border/strong"
+    },
+    "components/input/border-default-empty": {
+      "v": "#798284",
+      "via": "border/strong"
+    },
+    "components/input/border-hover-empty": {
+      "v": "#798284",
+      "via": "border/strong"
+    },
+    "components/input/border-focus-empty": {
+      "v": "#4D6E03",
+      "via": "border/focus"
+    },
+    "components/input/border-disabled-empty": {
+      "v": "#798284",
+      "via": "border/strong"
+    },
+    "components/input/border-default-filled": {
+      "v": "#798284",
+      "via": "border/strong"
+    },
+    "components/input/border-hover-filled": {
+      "v": "#798284",
+      "via": "border/strong"
+    },
+    "components/input/border-focus-filled": {
+      "v": "#4D6E03",
+      "via": "border/focus"
+    },
+    "components/input/border-disabled-filled": {
+      "v": "#798284",
+      "via": "border/strong"
+    },
+    "components/input/border-error-empty": {
+      "v": "#9F4643",
+      "via": "status/negative"
+    },
+    "components/input/border-error-filled": {
+      "v": "#9F4643",
+      "via": "status/negative"
+    },
+    "components/input/border-read-only-empty": {
+      "v": "#798284",
+      "via": "border/strong"
+    },
+    "components/input/border-read-only-filled": {
+      "v": "#798284",
+      "via": "border/strong"
+    },
+    "components/input/text-standalone": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/input/text-empty": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/input/text-default-filled": {
+      "v": "#242727",
+      "via": "text/primary"
+    },
+    "components/input/text-hover-filled": {
+      "v": "#242727",
+      "via": "text/primary"
+    },
+    "components/input/text-focus-filled": {
+      "v": "#242727",
+      "via": "text/primary"
+    },
+    "components/input/text-disabled-filled": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/input/text-error-empty": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/input/text-error-filled": {
+      "v": "#242727",
+      "via": "text/primary"
+    },
+    "components/input/text-read-only-empty": {
+      "v": "#242727",
+      "via": "text/primary"
+    },
+    "components/input/text-read-only-filled": {
+      "v": "#242727",
+      "via": "text/primary"
+    },
+    "components/input/label-standalone": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/input/label-empty": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/input/label-filled": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/input/label-error-empty": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/input/label-error-filled": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/input/label-read-only-empty": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/input/label-read-only-filled": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/input/hint-standalone": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/input/hint-empty": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/input/hint-filled": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/input/hint-error-empty": {
+      "v": "#9F4643",
+      "via": "status/negative"
+    },
+    "components/input/hint-error-filled": {
+      "v": "#9F4643",
+      "via": "status/negative"
+    },
+    "components/input/hint-read-only-empty": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/input/hint-read-only-filled": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/input/icon-standalone": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/input/icon-empty": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/input/icon-default-filled": {
+      "v": "#242727",
+      "via": "text/primary"
+    },
+    "components/input/icon-hover-filled": {
+      "v": "#242727",
+      "via": "text/primary"
+    },
+    "components/input/icon-focus-filled": {
+      "v": "#242727",
+      "via": "text/primary"
+    },
+    "components/input/icon-disabled-filled": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/input/icon-error-empty": {
+      "v": "#9F4643",
+      "via": "status/negative"
+    },
+    "components/input/icon-error-filled": {
+      "v": "#9F4643",
+      "via": "status/negative"
+    },
+    "components/input/icon-read-only-empty": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/input/icon-read-only-filled": {
+      "v": "#242727",
+      "via": "text/primary"
+    },
+    "components/table-row/bg-standalone": {
+      "v": "#FDFDFE",
+      "via": "surface/raised"
+    },
+    "components/table-row/bg-odd": {
+      "v": "#FDFDFE",
+      "via": "surface/raised"
+    },
+    "components/table-row/bg-even": {
+      "v": "#EBEDEE",
+      "via": "surface/sunken"
+    },
+    "components/table-row/bg-header": {
+      "v": "#EBEDEE",
+      "via": "surface/sunken"
+    },
+    "components/table-row/bg-header-hover": {
+      "v": "#E4E8E9",
+      "via": "surface/hover"
+    },
+    "components/table-row/border-standalone": {
+      "v": "#D9DFE1",
+      "via": "border/subtle"
+    },
+    "components/table-row/border-odd": {
+      "v": "#D9DFE1",
+      "via": "border/subtle"
+    },
+    "components/table-row/border-even": {
+      "v": "#D9DFE1",
+      "via": "border/subtle"
+    },
+    "components/table-row/border": {
+      "v": "#D9DFE1",
+      "via": "border/subtle"
+    },
+    "components/table-row/border-header": {
+      "v": "#CFD7D9",
+      "via": "border/default"
+    },
+    "components/table-row/text-standalone": {
+      "v": "#242727",
+      "via": "text/primary"
+    },
+    "components/table-row/text-odd": {
+      "v": "#242727",
+      "via": "text/primary"
+    },
+    "components/table-row/text-even": {
+      "v": "#242727",
+      "via": "text/primary"
+    },
+    "components/table-row/text": {
+      "v": "#242727",
+      "via": "text/primary"
+    },
+    "components/table-row/text-header": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/table-row/text-header-hover": {
+      "v": "#242727",
+      "via": "text/primary"
+    },
+    "components/table-row/meta-standalone": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/table-row/meta-odd": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/table-row/meta-even": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/table-row/meta": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/table-row/meta-header": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/table-row/chevron-standalone": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/table-row/chevron-odd": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/table-row/chevron-even": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/table-row/chevron": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/table-row/chevron-header": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/table-sort/idle-ascending": {
+      "v": "#000000",
+      "via": "surface/transparent"
+    },
+    "components/table-sort/idle-descending": {
+      "v": "#000000",
+      "via": "surface/transparent"
+    },
+    "components/table-sort/asc-none": {
+      "v": "#000000",
+      "via": "surface/transparent"
+    },
+    "components/table-sort/asc-ascending": {
+      "v": "#242727",
+      "via": "text/primary"
+    },
+    "components/table-sort/asc-descending": {
+      "v": "#000000",
+      "via": "surface/transparent"
+    },
+    "components/table-sort/desc-none": {
+      "v": "#000000",
+      "via": "surface/transparent"
+    },
+    "components/table-sort/desc-ascending": {
+      "v": "#000000",
+      "via": "surface/transparent"
+    },
+    "components/table-sort/desc-descending": {
+      "v": "#242727",
+      "via": "text/primary"
+    },
+    "components/table-cell/fg-link": {
+      "v": "#4D6E03",
+      "via": "text/action"
+    },
+    "components/table-cell/fg-credit": {
+      "v": "#367048",
+      "via": "status/positive"
+    },
+    "components/table-cell/fg-debit": {
+      "v": "#9F4643",
+      "via": "status/negative"
+    },
+    "components/table-cell/fg-pending": {
+      "v": "#8C5A03",
+      "via": "status/warning"
+    },
+    "components/table-row/bg-odd-hover": {
+      "v": "#E4E8E9",
+      "via": "surface/hover"
+    },
+    "components/table-row/bg-even-hover": {
+      "v": "#E4E8E9",
+      "via": "surface/hover"
+    },
+    "components/table-row/bg-selected": {
+      "v": "#E5F2D6",
+      "via": "action/surface"
+    },
+    "components/table-row/bg-selected-hover": {
+      "v": "#DCEFC7",
+      "via": "action/surface-hover"
+    },
+    "components/checkbox/box-bg-off-default": {
+      "v": "#FDFDFE",
+      "via": "surface/raised"
+    },
+    "components/checkbox/border-off-default": {
+      "v": "#798284",
+      "via": "border/strong"
+    },
+    "components/checkbox/title-off-default": {
+      "v": "#242727",
+      "via": "text/primary"
+    },
+    "components/checkbox/box-bg-off-hover": {
+      "v": "#E4E8E9",
+      "via": "surface/hover"
+    },
+    "components/checkbox/border-off-hover": {
+      "v": "#798284",
+      "via": "border/strong"
+    },
+    "components/checkbox/title-off-hover": {
+      "v": "#242727",
+      "via": "text/primary"
+    },
+    "components/checkbox/box-bg-off-focus": {
+      "v": "#FDFDFE",
+      "via": "surface/raised"
+    },
+    "components/checkbox/border-off-focus": {
+      "v": "#4D6E03",
+      "via": "border/focus"
+    },
+    "components/checkbox/title-off-focus": {
+      "v": "#242727",
+      "via": "text/primary"
+    },
+    "components/checkbox/box-bg-off-disabled": {
+      "v": "#EBEDEE",
+      "via": "surface/sunken"
+    },
+    "components/checkbox/border-off-disabled": {
+      "v": "#CFD7D9",
+      "via": "border/default"
+    },
+    "components/checkbox/title-off-disabled": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/checkbox/box-bg-on-default": {
+      "v": "#BEF274",
+      "via": "action/default"
+    },
+    "components/checkbox/border-on-default": {
+      "v": "#648F02",
+      "via": "border/action"
+    },
+    "components/checkbox/title-on-default": {
+      "v": "#242727",
+      "via": "text/primary"
+    },
+    "components/checkbox/box-bg-on-hover": {
+      "v": "#B1E369",
+      "via": "action/hover"
+    },
+    "components/checkbox/border-on-hover": {
+      "v": "#648F02",
+      "via": "border/action"
+    },
+    "components/checkbox/title-on-hover": {
+      "v": "#242727",
+      "via": "text/primary"
+    },
+    "components/checkbox/box-bg-on-focus": {
+      "v": "#BEF274",
+      "via": "action/default"
+    },
+    "components/checkbox/border-on-focus": {
+      "v": "#648F02",
+      "via": "border/action"
+    },
+    "components/checkbox/title-on-focus": {
+      "v": "#242727",
+      "via": "text/primary"
+    },
+    "components/checkbox/box-bg-on-disabled": {
+      "v": "#EBEDEE",
+      "via": "surface/sunken"
+    },
+    "components/checkbox/border-on-disabled": {
+      "v": "#CFD7D9",
+      "via": "border/default"
+    },
+    "components/checkbox/title-on-disabled": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/checkbox/box-bg-mixed-default": {
+      "v": "#BEF274",
+      "via": "action/default"
+    },
+    "components/checkbox/border-mixed-default": {
+      "v": "#648F02",
+      "via": "border/action"
+    },
+    "components/checkbox/title-mixed-default": {
+      "v": "#242727",
+      "via": "text/primary"
+    },
+    "components/checkbox/box-bg-mixed-hover": {
+      "v": "#B1E369",
+      "via": "action/hover"
+    },
+    "components/checkbox/border-mixed-hover": {
+      "v": "#648F02",
+      "via": "border/action"
+    },
+    "components/checkbox/title-mixed-hover": {
+      "v": "#242727",
+      "via": "text/primary"
+    },
+    "components/checkbox/box-bg-mixed-focus": {
+      "v": "#BEF274",
+      "via": "action/default"
+    },
+    "components/checkbox/border-mixed-focus": {
+      "v": "#648F02",
+      "via": "border/action"
+    },
+    "components/checkbox/title-mixed-focus": {
+      "v": "#242727",
+      "via": "text/primary"
+    },
+    "components/checkbox/box-bg-mixed-disabled": {
+      "v": "#EBEDEE",
+      "via": "surface/sunken"
+    },
+    "components/checkbox/border-mixed-disabled": {
+      "v": "#CFD7D9",
+      "via": "border/default"
+    },
+    "components/checkbox/title-mixed-disabled": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/checkbox/mark-on-on-default": {
+      "v": "#1D2B05",
+      "via": "text/on-action"
+    },
+    "components/checkbox/mark-mixed-mixed-default": {
+      "v": "#1D2B05",
+      "via": "text/on-action"
+    },
+    "components/checkbox/mark-on-on-hover": {
+      "v": "#1D2B05",
+      "via": "text/on-action"
+    },
+    "components/checkbox/mark-mixed-mixed-hover": {
+      "v": "#1D2B05",
+      "via": "text/on-action"
+    },
+    "components/checkbox/mark-on-on-focus": {
+      "v": "#1D2B05",
+      "via": "text/on-action"
+    },
+    "components/checkbox/mark-mixed-mixed-focus": {
+      "v": "#1D2B05",
+      "via": "text/on-action"
+    },
+    "components/checkbox/mark-on-on-disabled": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/checkbox/mark-mixed-mixed-disabled": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/checkbox/support": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/status/bg-neutral-subtle": {
+      "v": "#EBEDEE",
+      "via": "surface/sunken"
+    },
+    "components/status/bg-neutral-outline": {
+      "v": "#FDFDFE",
+      "via": "surface/raised"
+    },
+    "components/status/bg-neutral-solid": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/status/border-neutral-subtle": {
+      "v": "#000000",
+      "via": "border/transparent"
+    },
+    "components/status/border-neutral-solid": {
+      "v": "#000000",
+      "via": "border/transparent"
+    },
+    "components/status/border-neutral-outline": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/status/fg-neutral-subtle": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/status/fg-neutral-outline": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/status/fg-neutral-solid": {
+      "v": "#FDFDFE",
+      "via": "surface/raised"
+    },
+    "components/status/dot-neutral-subtle": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/status/dot-neutral-outline": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/status/dot-neutral-solid": {
+      "v": "#FDFDFE",
+      "via": "surface/raised"
+    },
+    "components/status/bg-success-subtle": {
+      "v": "#E0F3E4",
+      "via": "status/positive-surface"
+    },
+    "components/status/bg-success-outline": {
+      "v": "#FDFDFE",
+      "via": "surface/raised"
+    },
+    "components/status/bg-success-solid": {
+      "v": "#367048",
+      "via": "status/positive"
+    },
+    "components/status/border-success-subtle": {
+      "v": "#000000",
+      "via": "border/transparent"
+    },
+    "components/status/border-success-solid": {
+      "v": "#000000",
+      "via": "border/transparent"
+    },
+    "components/status/border-success-outline": {
+      "v": "#367048",
+      "via": "status/positive"
+    },
+    "components/status/fg-success-subtle": {
+      "v": "#367048",
+      "via": "status/positive"
+    },
+    "components/status/fg-success-outline": {
+      "v": "#367048",
+      "via": "status/positive"
+    },
+    "components/status/fg-success-solid": {
+      "v": "#FDFDFE",
+      "via": "surface/raised"
+    },
+    "components/status/dot-success-subtle": {
+      "v": "#367048",
+      "via": "status/positive"
+    },
+    "components/status/dot-success-outline": {
+      "v": "#367048",
+      "via": "status/positive"
+    },
+    "components/status/dot-success-solid": {
+      "v": "#FDFDFE",
+      "via": "surface/raised"
+    },
+    "components/status/bg-warning-subtle": {
+      "v": "#FBEAD6",
+      "via": "status/warning-surface"
+    },
+    "components/status/bg-warning-outline": {
+      "v": "#FDFDFE",
+      "via": "surface/raised"
+    },
+    "components/status/bg-warning-solid": {
+      "v": "#8C5A03",
+      "via": "status/warning"
+    },
+    "components/status/border-warning-subtle": {
+      "v": "#000000",
+      "via": "border/transparent"
+    },
+    "components/status/border-warning-solid": {
+      "v": "#000000",
+      "via": "border/transparent"
+    },
+    "components/status/border-warning-outline": {
+      "v": "#8C5A03",
+      "via": "status/warning"
+    },
+    "components/status/fg-warning-subtle": {
+      "v": "#8C5A03",
+      "via": "status/warning"
+    },
+    "components/status/fg-warning-outline": {
+      "v": "#8C5A03",
+      "via": "status/warning"
+    },
+    "components/status/fg-warning-solid": {
+      "v": "#FDFDFE",
+      "via": "surface/raised"
+    },
+    "components/status/dot-warning-subtle": {
+      "v": "#8C5A03",
+      "via": "status/warning"
+    },
+    "components/status/dot-warning-outline": {
+      "v": "#8C5A03",
+      "via": "status/warning"
+    },
+    "components/status/dot-warning-solid": {
+      "v": "#FDFDFE",
+      "via": "surface/raised"
+    },
+    "components/status/bg-error-subtle": {
+      "v": "#FFE6E4",
+      "via": "status/negative-surface"
+    },
+    "components/status/bg-error-outline": {
+      "v": "#FDFDFE",
+      "via": "surface/raised"
+    },
+    "components/status/bg-error-solid": {
+      "v": "#9F4643",
+      "via": "status/negative"
+    },
+    "components/status/border-error-subtle": {
+      "v": "#000000",
+      "via": "border/transparent"
+    },
+    "components/status/border-error-solid": {
+      "v": "#000000",
+      "via": "border/transparent"
+    },
+    "components/status/border-error-outline": {
+      "v": "#9F4643",
+      "via": "status/negative"
+    },
+    "components/status/fg-error-subtle": {
+      "v": "#9F4643",
+      "via": "status/negative"
+    },
+    "components/status/fg-error-outline": {
+      "v": "#9F4643",
+      "via": "status/negative"
+    },
+    "components/status/fg-error-solid": {
+      "v": "#FDFDFE",
+      "via": "surface/raised"
+    },
+    "components/status/dot-error-subtle": {
+      "v": "#9F4643",
+      "via": "status/negative"
+    },
+    "components/status/dot-error-outline": {
+      "v": "#9F4643",
+      "via": "status/negative"
+    },
+    "components/status/dot-error-solid": {
+      "v": "#FDFDFE",
+      "via": "surface/raised"
+    },
+    "components/status/bg-info-subtle": {
+      "v": "#D8F2FE",
+      "via": "status/info-surface"
+    },
+    "components/status/bg-info-outline": {
+      "v": "#FDFDFE",
+      "via": "surface/raised"
+    },
+    "components/status/bg-info-solid": {
+      "v": "#007093",
+      "via": "status/info"
+    },
+    "components/status/border-info-subtle": {
+      "v": "#000000",
+      "via": "border/transparent"
+    },
+    "components/status/border-info-solid": {
+      "v": "#000000",
+      "via": "border/transparent"
+    },
+    "components/status/border-info-outline": {
+      "v": "#007093",
+      "via": "status/info"
+    },
+    "components/status/fg-info-subtle": {
+      "v": "#007093",
+      "via": "status/info"
+    },
+    "components/status/fg-info-outline": {
+      "v": "#007093",
+      "via": "status/info"
+    },
+    "components/status/fg-info-solid": {
+      "v": "#FDFDFE",
+      "via": "surface/raised"
+    },
+    "components/status/dot-info-subtle": {
+      "v": "#007093",
+      "via": "status/info"
+    },
+    "components/status/dot-info-outline": {
+      "v": "#007093",
+      "via": "status/info"
+    },
+    "components/status/dot-info-solid": {
+      "v": "#FDFDFE",
+      "via": "surface/raised"
+    },
+    "components/menu/bg-standalone": {
+      "v": "#FDFDFE",
+      "via": "surface/raised"
+    },
+    "components/menu/bg-default": {
+      "v": "#FDFDFE",
+      "via": "surface/raised"
+    },
+    "components/menu/bg-hover": {
+      "v": "#E4E8E9",
+      "via": "surface/hover"
+    },
+    "components/menu/bg-selected": {
+      "v": "#E5F2D6",
+      "via": "action/surface"
+    },
+    "components/menu/bg-selected-hover": {
+      "v": "#E5F2D6",
+      "via": "action/surface"
+    },
+    "components/menu/bg-disabled": {
+      "v": "#FDFDFE",
+      "via": "surface/raised"
+    },
+    "components/menu/fg-standalone": {
+      "v": "#242727",
+      "via": "text/primary"
+    },
+    "components/menu/fg-default": {
+      "v": "#242727",
+      "via": "text/primary"
+    },
+    "components/menu/fg-hover": {
+      "v": "#242727",
+      "via": "text/primary"
+    },
+    "components/menu/fg-selected": {
+      "v": "#242727",
+      "via": "text/primary"
+    },
+    "components/menu/fg-selected-hover": {
+      "v": "#242727",
+      "via": "text/primary"
+    },
+    "components/menu/fg-disabled": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/menu/box-bg-standalone": {
+      "v": "#FDFDFE",
+      "via": "surface/raised"
+    },
+    "components/menu/box-bg-default": {
+      "v": "#FDFDFE",
+      "via": "surface/raised"
+    },
+    "components/menu/box-bg-hover": {
+      "v": "#FDFDFE",
+      "via": "surface/raised"
+    },
+    "components/menu/box-bg-selected": {
+      "v": "#BEF274",
+      "via": "action/default"
+    },
+    "components/menu/box-bg-selected-hover": {
+      "v": "#B1E369",
+      "via": "action/hover"
+    },
+    "components/menu/box-bg-disabled": {
+      "v": "#EBEDEE",
+      "via": "surface/sunken"
+    },
+    "components/menu/box-border-standalone": {
+      "v": "#798284",
+      "via": "border/strong"
+    },
+    "components/menu/box-border-default": {
+      "v": "#798284",
+      "via": "border/strong"
+    },
+    "components/menu/box-border-hover": {
+      "v": "#798284",
+      "via": "border/strong"
+    },
+    "components/menu/box-border-selected": {
+      "v": "#798284",
+      "via": "border/strong"
+    },
+    "components/menu/box-border-selected-hover": {
+      "v": "#798284",
+      "via": "border/strong"
+    },
+    "components/menu/box-border-disabled": {
+      "v": "#CFD7D9",
+      "via": "border/default"
+    },
+    "components/menu/tick-standalone": {
+      "v": "#000000",
+      "via": "surface/transparent"
+    },
+    "components/menu/tick-default": {
+      "v": "#000000",
+      "via": "surface/transparent"
+    },
+    "components/menu/tick-hover": {
+      "v": "#000000",
+      "via": "surface/transparent"
+    },
+    "components/menu/tick-selected": {
+      "v": "#1D2B05",
+      "via": "text/on-action"
+    },
+    "components/menu/tick-selected-hover": {
+      "v": "#1D2B05",
+      "via": "text/on-action"
+    },
+    "components/menu/tick-disabled": {
+      "v": "#000000",
+      "via": "surface/transparent"
+    },
+    "components/menu/check-standalone": {
+      "v": "#000000",
+      "via": "surface/transparent"
+    },
+    "components/menu/check-default": {
+      "v": "#000000",
+      "via": "surface/transparent"
+    },
+    "components/menu/check-hover": {
+      "v": "#000000",
+      "via": "surface/transparent"
+    },
+    "components/menu/check-selected": {
+      "v": "#4D6E03",
+      "via": "text/action"
+    },
+    "components/menu/check-selected-hover": {
+      "v": "#4D6E03",
+      "via": "text/action"
+    },
+    "components/menu/check-disabled": {
+      "v": "#000000",
+      "via": "surface/transparent"
+    },
+    "components/checkbox/track-off-default": {
+      "v": "#798284",
+      "via": "border/strong"
+    },
+    "components/checkbox/track-off-hover": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/checkbox/track-off-focus": {
+      "v": "#798284",
+      "via": "border/strong"
+    },
+    "components/checkbox/track-off-disabled": {
+      "v": "#CFD7D9",
+      "via": "border/default"
+    },
+    "components/checkbox/track-on-default": {
+      "v": "#BEF274",
+      "via": "action/default"
+    },
+    "components/checkbox/track-on-hover": {
+      "v": "#B1E369",
+      "via": "action/hover"
+    },
+    "components/checkbox/track-on-focus": {
+      "v": "#BEF274",
+      "via": "action/default"
+    },
+    "components/checkbox/track-on-disabled": {
+      "v": "#CFD7D9",
+      "via": "border/default"
+    },
+    "components/checkbox/knob-off-off-default": {
+      "v": "#FDFDFE",
+      "via": "surface/raised"
+    },
+    "components/checkbox/knob-off-on-default": {
+      "v": "#000000",
+      "via": "surface/transparent"
+    },
+    "components/checkbox/knob-on-off-default": {
+      "v": "#000000",
+      "via": "surface/transparent"
+    },
+    "components/checkbox/knob-on-on-default": {
+      "v": "#1D2B05",
+      "via": "text/on-action"
+    },
+    "components/checkbox/knob-off-off-hover": {
+      "v": "#FDFDFE",
+      "via": "surface/raised"
+    },
+    "components/checkbox/knob-off-on-hover": {
+      "v": "#000000",
+      "via": "surface/transparent"
+    },
+    "components/checkbox/knob-on-off-hover": {
+      "v": "#000000",
+      "via": "surface/transparent"
+    },
+    "components/checkbox/knob-on-on-hover": {
+      "v": "#1D2B05",
+      "via": "text/on-action"
+    },
+    "components/checkbox/knob-off-off-focus": {
+      "v": "#FDFDFE",
+      "via": "surface/raised"
+    },
+    "components/checkbox/knob-off-on-focus": {
+      "v": "#000000",
+      "via": "surface/transparent"
+    },
+    "components/checkbox/knob-on-off-focus": {
+      "v": "#000000",
+      "via": "surface/transparent"
+    },
+    "components/checkbox/knob-on-on-focus": {
+      "v": "#1D2B05",
+      "via": "text/on-action"
+    },
+    "components/checkbox/knob-off-off-disabled": {
+      "v": "#FDFDFE",
+      "via": "surface/raised"
+    },
+    "components/checkbox/knob-off-on-disabled": {
+      "v": "#000000",
+      "via": "surface/transparent"
+    },
+    "components/checkbox/knob-on-off-disabled": {
+      "v": "#000000",
+      "via": "surface/transparent"
+    },
+    "components/checkbox/knob-on-on-disabled": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/checkbox/track-border-on": {
+      "v": "#648F02",
+      "via": "border/action"
+    },
+    "components/chip/fg-neutral-solid": {
+      "v": "#FDFDFE",
+      "via": "text/inverse"
+    },
+    "components/chip/fg-success-solid": {
+      "v": "#FDFDFE",
+      "via": "text/inverse"
+    },
+    "components/chip/fg-warning-solid": {
+      "v": "#FDFDFE",
+      "via": "text/inverse"
+    },
+    "components/chip/fg-error-solid": {
+      "v": "#FDFDFE",
+      "via": "text/inverse"
+    },
+    "components/chip/fg-info-solid": {
+      "v": "#FDFDFE",
+      "via": "text/inverse"
+    },
+    "components/status/overlay-neutral-subtle": {
+      "v": "#242727",
+      "via": "text/primary"
+    },
+    "components/status/overlay-neutral-outline": {
+      "v": "#242727",
+      "via": "text/primary"
+    },
+    "components/status/overlay-neutral-solid": {
+      "v": "#FDFDFE",
+      "via": "surface/raised"
+    },
+    "components/status/overlay-success-subtle": {
+      "v": "#242727",
+      "via": "text/primary"
+    },
+    "components/status/overlay-success-outline": {
+      "v": "#242727",
+      "via": "text/primary"
+    },
+    "components/status/overlay-success-solid": {
+      "v": "#FDFDFE",
+      "via": "surface/raised"
+    },
+    "components/status/overlay-warning-subtle": {
+      "v": "#242727",
+      "via": "text/primary"
+    },
+    "components/status/overlay-warning-outline": {
+      "v": "#242727",
+      "via": "text/primary"
+    },
+    "components/status/overlay-warning-solid": {
+      "v": "#FDFDFE",
+      "via": "surface/raised"
+    },
+    "components/status/overlay-error-subtle": {
+      "v": "#242727",
+      "via": "text/primary"
+    },
+    "components/status/overlay-error-outline": {
+      "v": "#242727",
+      "via": "text/primary"
+    },
+    "components/status/overlay-error-solid": {
+      "v": "#FDFDFE",
+      "via": "surface/raised"
+    },
+    "components/status/overlay-info-subtle": {
+      "v": "#242727",
+      "via": "text/primary"
+    },
+    "components/status/overlay-info-outline": {
+      "v": "#242727",
+      "via": "text/primary"
+    },
+    "components/status/overlay-info-solid": {
+      "v": "#FDFDFE",
+      "via": "surface/raised"
+    },
+    "components/status/overlay-standalone": {
+      "v": "#242727",
+      "via": "text/primary"
+    },
+    "components/checkbox/box-border-standalone": {
+      "v": "#798284",
+      "via": "border/strong"
+    },
+    "components/checkbox/box-border-off-default": {
+      "v": "#798284",
+      "via": "border/strong"
+    },
+    "components/checkbox/box-border-off-hover": {
+      "v": "#798284",
+      "via": "border/strong"
+    },
+    "components/checkbox/box-border-off-focus": {
+      "v": "#798284",
+      "via": "border/strong"
+    },
+    "components/checkbox/box-border-off-disabled": {
+      "v": "#CFD7D9",
+      "via": "border/default"
+    },
+    "components/checkbox/box-border-on-default": {
+      "v": "#648F02",
+      "via": "border/action"
+    },
+    "components/checkbox/box-border-on-hover": {
+      "v": "#648F02",
+      "via": "border/action"
+    },
+    "components/checkbox/box-border-on-focus": {
+      "v": "#648F02",
+      "via": "border/action"
+    },
+    "components/checkbox/box-border-on-disabled": {
+      "v": "#CFD7D9",
+      "via": "border/default"
+    },
+    "components/checkbox/box-border-mixed-default": {
+      "v": "#648F02",
+      "via": "border/action"
+    },
+    "components/checkbox/box-border-mixed-hover": {
+      "v": "#648F02",
+      "via": "border/action"
+    },
+    "components/checkbox/box-border-mixed-focus": {
+      "v": "#648F02",
+      "via": "border/action"
+    },
+    "components/checkbox/box-border-mixed-disabled": {
+      "v": "#CFD7D9",
+      "via": "border/default"
+    },
+    "components/status/body-neutral-subtle": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/status/body-neutral-outline": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/status/body-neutral-solid": {
+      "v": "#FDFDFE",
+      "via": "surface/raised"
+    },
+    "components/status/body-success-subtle": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/status/body-success-outline": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/status/body-success-solid": {
+      "v": "#FDFDFE",
+      "via": "surface/raised"
+    },
+    "components/status/body-warning-subtle": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/status/body-warning-outline": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/status/body-warning-solid": {
+      "v": "#FDFDFE",
+      "via": "surface/raised"
+    },
+    "components/status/body-error-subtle": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/status/body-error-outline": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/status/body-error-solid": {
+      "v": "#FDFDFE",
+      "via": "surface/raised"
+    },
+    "components/status/body-info-subtle": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/status/body-info-outline": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/status/body-info-solid": {
+      "v": "#FDFDFE",
+      "via": "surface/raised"
+    },
+    "components/status/body-standalone": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/status/fg-standalone": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/tooltip/bg": {
+      "v": "#242727",
+      "via": "text/primary"
+    },
+    "components/tooltip/fg": {
+      "v": "#FDFDFE",
+      "via": "text/inverse"
+    },
+    "components/icon/fg-standalone": {
+      "v": "#242727",
+      "via": "text/primary"
+    },
+    "components/tab/bg-standalone": {
+      "v": "#00000000",
+      "via": "surface/transparent"
+    },
+    "components/tab/bg-underline-default": {
+      "v": "#00000000",
+      "via": "surface/transparent"
+    },
+    "components/tab/bg-underline-hover": {
+      "v": "#E4E8E9",
+      "via": "surface/hover"
+    },
+    "components/tab/bg-underline-selected": {
+      "v": "#FDFDFE",
+      "via": "surface/raised"
+    },
+    "components/tab/bg-underline-selected-hover": {
+      "v": "#FDFDFE",
+      "via": "surface/raised"
+    },
+    "components/tab/bg-underline-disabled": {
+      "v": "#EBEDEE",
+      "via": "surface/sunken"
+    },
+    "components/tab/bg-enclosed-default": {
+      "v": "#00000000",
+      "via": "surface/transparent"
+    },
+    "components/tab/bg-enclosed-hover": {
+      "v": "#E4E8E9",
+      "via": "surface/hover"
+    },
+    "components/tab/bg-enclosed-selected": {
+      "v": "#FDFDFE",
+      "via": "surface/raised"
+    },
+    "components/tab/bg-enclosed-selected-hover": {
+      "v": "#FDFDFE",
+      "via": "surface/raised"
+    },
+    "components/tab/bg-enclosed-disabled": {
+      "v": "#EBEDEE",
+      "via": "surface/sunken"
+    },
+    "components/tab/bg-segmented-default": {
+      "v": "#00000000",
+      "via": "surface/transparent"
+    },
+    "components/tab/bg-segmented-hover": {
+      "v": "#E4E8E9",
+      "via": "surface/hover"
+    },
+    "components/tab/bg-segmented-selected": {
+      "v": "#FDFDFE",
+      "via": "surface/raised"
+    },
+    "components/tab/bg-segmented-selected-hover": {
+      "v": "#FDFDFE",
+      "via": "surface/raised"
+    },
+    "components/tab/bg-segmented-disabled": {
+      "v": "#EBEDEE",
+      "via": "surface/sunken"
+    },
+    "components/tab/fg-standalone": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/tab/fg-underline-default": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/tab/fg-underline-hover": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/tab/fg-underline-selected": {
+      "v": "#242727",
+      "via": "text/primary"
+    },
+    "components/tab/fg-underline-selected-hover": {
+      "v": "#242727",
+      "via": "text/primary"
+    },
+    "components/tab/fg-underline-disabled": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/tab/fg-enclosed-default": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/tab/fg-enclosed-hover": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/tab/fg-enclosed-selected": {
+      "v": "#242727",
+      "via": "text/primary"
+    },
+    "components/tab/fg-enclosed-selected-hover": {
+      "v": "#242727",
+      "via": "text/primary"
+    },
+    "components/tab/fg-enclosed-disabled": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/tab/fg-segmented-default": {
+      "v": "#242727",
+      "via": "text/primary"
+    },
+    "components/tab/fg-segmented-hover": {
+      "v": "#242727",
+      "via": "text/primary"
+    },
+    "components/tab/fg-segmented-selected": {
+      "v": "#242727",
+      "via": "text/primary"
+    },
+    "components/tab/fg-segmented-selected-hover": {
+      "v": "#242727",
+      "via": "text/primary"
+    },
+    "components/tab/fg-segmented-disabled": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/tab/indicator-underline-selected": {
+      "v": "#648F02",
+      "via": "border/action"
+    },
+    "components/tab/indicator-enclosed-selected": {
+      "v": "#648F02",
+      "via": "border/action"
+    },
+    "components/tab/border-underline": {
+      "v": "#00000000",
+      "via": "border/transparent"
+    },
+    "components/tab/border-enclosed-default": {
+      "v": "#00000000",
+      "via": "border/transparent"
+    },
+    "components/tab/border-enclosed-hover": {
+      "v": "#00000000",
+      "via": "border/transparent"
+    },
+    "components/tab/border-enclosed-selected": {
+      "v": "#CFD7D9",
+      "via": "border/default"
+    },
+    "components/tab/border-enclosed-selected-hover": {
+      "v": "#CFD7D9",
+      "via": "border/default"
+    },
+    "components/tab/border-enclosed-disabled": {
+      "v": "#00000000",
+      "via": "border/transparent"
+    },
+    "components/tab/border-segmented-default": {
+      "v": "#00000000",
+      "via": "border/transparent"
+    },
+    "components/tab/border-segmented-hover": {
+      "v": "#00000000",
+      "via": "border/transparent"
+    },
+    "components/tab/border-segmented-selected": {
+      "v": "#D9DFE1",
+      "via": "border/subtle"
+    },
+    "components/tab/border-segmented-selected-hover": {
+      "v": "#D9DFE1",
+      "via": "border/subtle"
+    },
+    "components/tab/border-segmented-disabled": {
+      "v": "#00000000",
+      "via": "border/transparent"
+    },
+    "components/tab/track-underline": {
+      "v": "#00000000",
+      "via": "surface/transparent"
+    },
+    "components/tab/track-enclosed": {
+      "v": "#00000000",
+      "via": "surface/transparent"
+    },
+    "components/tab/track-segmented": {
+      "v": "#DEE3E4",
+      "via": "surface/pressed"
+    },
+    "components/nav/bg-default": {
+      "v": "#FDFDFE",
+      "via": "surface/raised"
+    },
+    "components/nav/bg-hover": {
+      "v": "#E4E8E9",
+      "via": "surface/hover"
+    },
+    "components/nav/bg-active": {
+      "v": "#BEF274",
+      "via": "action/default"
+    },
+    "components/nav/bg-active-hover": {
+      "v": "#B1E369",
+      "via": "action/hover"
+    },
+    "components/nav/fg": {
+      "v": "#242727",
+      "via": "text/primary"
+    },
+    "components/nav/marker": {
+      "v": "#648F02",
+      "via": "border/action"
+    },
+    "components/breadcrumb/fg-link": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/breadcrumb/fg-link-hover": {
+      "v": "#242727",
+      "via": "text/primary"
+    },
+    "components/breadcrumb/fg-current": {
+      "v": "#242727",
+      "via": "text/primary"
+    },
+    "components/breadcrumb/separator": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/tab/track-border-segmented": {
+      "v": "#00000000",
+      "via": "border/transparent"
+    },
+    "components/stepper/bg-upcoming": {
+      "v": "#000000",
+      "via": "surface/transparent"
+    },
+    "components/stepper/bg-current": {
+      "v": "#BEF274",
+      "via": "action/default"
+    },
+    "components/stepper/bg-done": {
+      "v": "#BEF274",
+      "via": "action/default"
+    },
+    "components/stepper/border-upcoming": {
+      "v": "#798284",
+      "via": "border/strong"
+    },
+    "components/stepper/border-current": {
+      "v": "#648F02",
+      "via": "border/action"
+    },
+    "components/stepper/border-done": {
+      "v": "#000000",
+      "via": "border/transparent"
+    },
+    "components/stepper/label-upcoming": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/stepper/label-current": {
+      "v": "#242727",
+      "via": "text/primary"
+    },
+    "components/stepper/label-done": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/stepper/connector-upcoming": {
+      "v": "#CFD7D9",
+      "via": "border/default"
+    },
+    "components/stepper/connector-current": {
+      "v": "#CFD7D9",
+      "via": "border/default"
+    },
+    "components/stepper/connector-done": {
+      "v": "#BEF274",
+      "via": "action/default"
+    },
+    "components/stepper/number-upcoming": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/stepper/number-current": {
+      "v": "#1D2B05",
+      "via": "text/on-action"
+    },
+    "components/stepper/number-done": {
+      "v": "#000000",
+      "via": "surface/transparent"
+    },
+    "components/calendar-day/bg-default": {
+      "v": "#000000",
+      "via": "surface/transparent"
+    },
+    "components/calendar-day/bg-hover": {
+      "v": "#E4E8E9",
+      "via": "surface/hover"
+    },
+    "components/calendar-day/bg-selected": {
+      "v": "#BEF274",
+      "via": "action/default"
+    },
+    "components/calendar-day/bg-disabled": {
+      "v": "#000000",
+      "via": "surface/transparent"
+    },
+    "components/calendar-day/bg-today": {
+      "v": "#000000",
+      "via": "surface/transparent"
+    },
+    "components/calendar-day/bg-outside": {
+      "v": "#000000",
+      "via": "surface/transparent"
+    },
+    "components/calendar-day/bg-in-range": {
+      "v": "#E5F2D6",
+      "via": "action/surface"
+    },
+    "components/calendar-day/bg-range-start": {
+      "v": "#BEF274",
+      "via": "action/default"
+    },
+    "components/calendar-day/bg-range-end": {
+      "v": "#BEF274",
+      "via": "action/default"
+    },
+    "components/calendar-day/fg-default": {
+      "v": "#242727",
+      "via": "text/primary"
+    },
+    "components/calendar-day/fg-hover": {
+      "v": "#242727",
+      "via": "text/primary"
+    },
+    "components/calendar-day/fg-selected": {
+      "v": "#1D2B05",
+      "via": "text/on-action"
+    },
+    "components/calendar-day/fg-disabled": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/calendar-day/fg-today": {
+      "v": "#4D6E03",
+      "via": "text/action"
+    },
+    "components/calendar-day/fg-outside": {
+      "v": "#606869",
+      "via": "text/dim"
+    },
+    "components/calendar-day/fg-in-range": {
+      "v": "#242727",
+      "via": "text/primary"
+    },
+    "components/calendar-day/fg-range-start": {
+      "v": "#1D2B05",
+      "via": "text/on-action"
+    },
+    "components/calendar-day/fg-range-end": {
+      "v": "#1D2B05",
+      "via": "text/on-action"
+    },
+    "components/calendar-day/border": {
+      "v": "#000000",
+      "via": "border/transparent"
+    },
+    "components/calendar-day/border-today": {
+      "v": "#BEF274",
+      "via": "action/default"
+    },
+    "components/calendar-day/border-outside": {
+      "v": "#000000",
+      "via": "border/transparent"
+    },
+    "components/calendar-day/border-in-range": {
+      "v": "#000000",
+      "via": "border/transparent"
+    },
+    "components/calendar-day/border-range-start": {
+      "v": "#000000",
+      "via": "border/transparent"
+    },
+    "components/calendar-day/border-range-end": {
+      "v": "#000000",
+      "via": "border/transparent"
+    },
+    "components/accordion/bg": {
+      "v": "#FDFDFE",
+      "via": "surface/raised"
+    },
+    "components/accordion/bg-hover": {
+      "v": "#E4E8E9",
+      "via": "surface/hover"
+    },
+    "components/accordion/fg": {
+      "v": "#242727",
+      "via": "text/primary"
+    },
+    "components/status/bg-standalone": {
+      "v": "#EBEDEE",
+      "via": "surface/sunken"
+    }
+  }
+}

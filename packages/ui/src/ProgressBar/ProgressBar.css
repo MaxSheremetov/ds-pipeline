@@ -1,0 +1,16 @@
+/* Progress bar: a label row over a track. Source of truth: Figma "Progress bar" (Size); the label row and the hatch are booleans.
+   Track 8, 6 or 4 tall, fully round, fill surface/sunken; the fill is components/status/fg-standalone. */
+.ds-progress { --_h: var(--ds-spacing-8); display: flex; flex-direction: column; gap: var(--ds-spacing-6); width: 100%; box-sizing: border-box; }
+.ds-progress[data-size="medium"] { --_h: var(--ds-spacing-6); }
+.ds-progress[data-size="small"] { --_h: var(--ds-spacing-4); }
+.ds-progress__row { display: flex; justify-content: space-between; align-items: baseline; gap: var(--ds-spacing-8); font-size: var(--ds-type-fs-meta); line-height: var(--ds-type-line-meta); }
+.ds-progress__label { font-family: var(--ds-type-font-text), system-ui, sans-serif; color: var(--ds-colour-text-dim); min-width: 0; }
+.ds-progress__value { font-family: var(--ds-type-font-mono), ui-monospace, monospace; color: var(--ds-colour-text-primary); flex: none; }
+.ds-progress__track { position: relative; height: var(--_h); border-radius: var(--ds-radius-full); background: var(--ds-colour-surface-sunken); overflow: hidden; }
+/* Hatching: 2 wide lines every 6, leaning 20 degrees, in border/subtle (as drawn in Figma) */
+.ds-progress__track[data-hatched] { background-image: repeating-linear-gradient(70deg, transparent 0 var(--ds-spacing-4), var(--ds-colour-border-subtle) var(--ds-spacing-4) var(--ds-spacing-6)); background-color: var(--ds-colour-surface-sunken); }
+.ds-progress__fill { height: 100%; border-radius: var(--ds-radius-full); background: var(--ds-component-status-fg-standalone); }
+@media (forced-colors: active) {
+  .ds-progress__track { forced-color-adjust: none; border: var(--ds-stroke-border) solid CanvasText; background: Canvas; }
+  .ds-progress__fill { background: Highlight; }
+}

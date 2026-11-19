@@ -1,0 +1,2 @@
+/* Icon button: the Button variants and states (Button.css) on a square. */
+.ds-icon-button { --_px: 0; width: var(--_h); padding: 0; }

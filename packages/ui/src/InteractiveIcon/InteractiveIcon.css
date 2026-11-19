@@ -1,0 +1,37 @@
+/* Interactive icon: a small clickable icon that lives inside another component (a chip's remove, a notice's close).
+   Source of truth: Figma "Interactive icon" (Size x State). A host sets --ds-interactive-fg and --ds-interactive-overlay
+   to its own text and overlay colours; standalone it uses the status standalone tokens. */
+.ds-interactive-icon {
+  --_box: var(--ds-spacing-24);
+  position: relative;
+  flex: none;
+  box-sizing: border-box;
+  width: var(--_box);
+  height: var(--_box);
+  margin: 0;
+  padding: 0;
+  display: inline-grid;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--ds-interactive-fg, var(--ds-component-status-fg-standalone));
+  cursor: pointer;
+}
+.ds-interactive-icon[data-size="medium"] { --_box: var(--ds-spacing-32); }
+.ds-interactive-icon[data-size="large"] { --_box: var(--ds-spacing-40); }
+.ds-interactive-icon:hover:not(:disabled) { background: color-mix(in srgb, var(--ds-interactive-overlay, var(--ds-component-status-overlay-standalone)) var(--ds-state-overlay-hover), transparent); }
+.ds-interactive-icon:active:not(:disabled) { background: color-mix(in srgb, var(--ds-interactive-overlay, var(--ds-component-status-overlay-standalone)) var(--ds-state-overlay-pressed), transparent); }
+/* Focus: the Figma ring is 2px inside the circle, in border/focus */
+.ds-interactive-icon:focus-visible {
+  outline: var(--ds-stroke-focus) solid var(--ds-colour-border-focus);
+  outline-offset: calc(var(--ds-stroke-focus) * -1);
+}
+.ds-interactive-icon:disabled { opacity: var(--ds-state-opacity-disabled); cursor: not-allowed; }
+
+@media (forced-colors: active) {
+  .ds-interactive-icon { forced-color-adjust: none; color: ButtonText; }
+  .ds-interactive-icon:hover:not(:disabled) { background: Highlight; color: HighlightText; }
+  .ds-interactive-icon:focus-visible { outline-color: Highlight; }
+  .ds-interactive-icon:disabled { color: GrayText; }
+}

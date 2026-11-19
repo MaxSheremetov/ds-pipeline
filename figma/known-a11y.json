@@ -1,0 +1,1 @@
+{"components-select--menu-open#aria-hidden-focus":"Radix Select hides everything outside the open menu with aria-hidden, the trigger included; focus is held inside the menu while it is open (modal), so the hidden trigger cannot be reached."}

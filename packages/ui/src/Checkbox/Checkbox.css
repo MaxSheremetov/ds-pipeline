@@ -1,0 +1,94 @@
+/* Checkbox. Values come only from tokens. Source of truth: Figma "Checkbox" page, Northgate.
+   The input is the box itself (appearance none); the tick and the dash are masks coloured by the mark token. */
+.ds-checkbox {
+  --_box: var(--ds-spacing-24);
+  --_mark: var(--ds-spacing-16);
+  --_r: var(--ds-radius-xs-4);
+  --_lfs: var(--ds-type-fs-body);
+  --_llh: var(--ds-type-line-body);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ds-spacing-8);
+  cursor: pointer;
+}
+.ds-checkbox[data-size="medium"] { --_box: var(--ds-spacing-20); --_mark: var(--ds-spacing-12); }
+.ds-checkbox[data-size="small"] { --_box: var(--ds-spacing-16); --_mark: var(--ds-spacing-10); --_r: var(--ds-radius-xxs-2); --_lfs: var(--ds-type-fs-meta); --_llh: var(--ds-type-line-meta); }
+
+.ds-checkbox__input {
+  --_bg: var(--ds-component-checkbox-box-bg-off-default);
+  --_bd: var(--ds-component-checkbox-border-off-default);
+  --_mk: var(--ds-component-checkbox-mark-on-on-default);
+  appearance: none;
+  position: relative;
+  flex: none;
+  box-sizing: border-box;
+  width: var(--_box);
+  height: var(--_box);
+  margin: 0;
+  border: var(--ds-stroke-border) solid var(--_bd);
+  border-radius: var(--_r);
+  background: var(--_bg);
+  cursor: inherit;
+}
+.ds-checkbox__input::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: var(--_mark);
+  height: var(--_mark);
+  background: var(--_mk);
+  mask: var(--_glyph) center / contain no-repeat;
+  -webkit-mask: var(--_glyph) center / contain no-repeat;
+  visibility: hidden;
+  --_glyph: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none' stroke='black' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1.5 6.5 4.5 9.5 10.5 2.5'/%3E%3C/svg%3E");
+}
+.ds-checkbox__input:indeterminate::after {
+  --_glyph: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none' stroke='black' stroke-width='1.75' stroke-linecap='round'%3E%3Cpath d='M1.5 6H10.5'/%3E%3C/svg%3E");
+}
+.ds-checkbox__input:checked::after, .ds-checkbox__input:indeterminate::after { visibility: visible; }
+
+/* On and mixed: action fill and border */
+.ds-checkbox__input:checked, .ds-checkbox__input:indeterminate {
+  --_bg: var(--ds-component-checkbox-box-bg-on-default);
+  --_bd: var(--ds-component-checkbox-border-on-default);
+}
+/* Hover (not for disabled) */
+.ds-checkbox__input:hover:not(:disabled) { --_bg: var(--ds-component-checkbox-box-bg-off-hover); }
+.ds-checkbox__input:hover:not(:disabled):checked, .ds-checkbox__input:hover:not(:disabled):indeterminate { --_bg: var(--ds-component-checkbox-box-bg-on-hover); }
+
+/* Focus: a 2px ring in border/focus outside the box with a 2px gap, as on Button and Input (Figma "Focus ring" layer); the border turns border/focus too */
+.ds-checkbox__input:focus-visible {
+  --_bd: var(--ds-component-checkbox-border-off-focus);
+  outline: var(--ds-stroke-focus) solid var(--ds-colour-border-focus);
+  outline-offset: var(--ds-spacing-2);
+}
+
+/* Disabled */
+.ds-checkbox__input:disabled {
+  --_bg: var(--ds-component-checkbox-box-bg-off-disabled);
+  --_bd: var(--ds-component-checkbox-border-off-disabled);
+  --_mk: var(--ds-component-checkbox-mark-on-on-disabled);
+  cursor: not-allowed;
+}
+
+.ds-checkbox__label {
+  font-family: var(--ds-type-font-text), system-ui, sans-serif;
+  font-size: var(--_lfs);
+  line-height: var(--_llh);
+  font-weight: var(--ds-type-weight-regular);
+  letter-spacing: var(--ds-type-track-none);
+  color: var(--ds-component-checkbox-title-off-default);
+}
+.ds-checkbox:has(.ds-checkbox__input:disabled) { cursor: not-allowed; }
+.ds-checkbox:has(.ds-checkbox__input:disabled) .ds-checkbox__label { color: var(--ds-component-checkbox-title-off-disabled); }
+
+/* Forced colours (Windows high contrast): backgrounds are replaced by the system, so the mask-drawn tick would vanish. Draw it in a system colour. */
+@media (forced-colors: active) {
+  .ds-checkbox__input { border-color: ButtonText; background: Field; forced-color-adjust: none; }
+  .ds-checkbox__input::after { background: CanvasText; forced-color-adjust: none; }
+  .ds-checkbox__input:disabled { border-color: GrayText; }
+  .ds-checkbox__input:disabled::after { background: GrayText; }
+  .ds-checkbox__label { color: CanvasText; }
+  .ds-checkbox:has(.ds-checkbox__input:disabled) .ds-checkbox__label { color: GrayText; }
+}

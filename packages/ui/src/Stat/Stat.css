@@ -1,0 +1,43 @@
+/* Stat: a figure with its label and an optional change. Source of truth: Figma "Data display" page, Stat (Size x Trend). */
+.ds-stat {
+  --_fs: var(--ds-type-fs-display);
+  --_lh: var(--ds-type-line-display);
+  --_ls: var(--ds-type-track-display);
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-spacing-4);
+  margin: 0;
+  min-width: 0;
+  color: var(--ds-colour-text-primary);
+}
+.ds-stat[data-size="medium"] { --_fs: var(--ds-type-fs-title); --_lh: var(--ds-type-line-title); --_ls: var(--ds-type-track-heading); }
+.ds-stat[data-size="small"] { --_fs: var(--ds-type-fs-section); --_lh: var(--ds-type-line-section); --_ls: var(--ds-type-track-heading); }
+.ds-stat > * { margin: 0; }
+.ds-stat__label {
+  font-family: var(--ds-type-font-mono), ui-monospace, monospace;
+  font-size: var(--ds-type-fs-micro);
+  line-height: var(--ds-type-line-micro);
+  font-weight: var(--ds-type-weight-medium);
+  letter-spacing: var(--ds-type-track-caps);
+  text-transform: uppercase;
+  color: var(--ds-colour-text-dim);
+}
+.ds-stat__value {
+  font-family: var(--ds-type-font-text), system-ui, sans-serif;
+  font-size: var(--_fs);
+  line-height: var(--_lh);
+  font-weight: var(--ds-type-weight-semibold);
+  letter-spacing: var(--_ls);
+  color: var(--ds-colour-text-primary);
+}
+.ds-stat__delta { display: flex; align-items: center; gap: var(--ds-spacing-4); font-size: var(--ds-type-fs-meta); line-height: var(--ds-type-line-meta); }
+.ds-stat__change { font-family: var(--ds-type-font-mono), ui-monospace, monospace; color: var(--_trend); }
+.ds-stat__delta > svg { color: var(--_trend); }
+.ds-stat__period { font-family: var(--ds-type-font-text), system-ui, sans-serif; color: var(--ds-colour-text-dim); }
+.ds-stat[data-trend="up"] { --_trend: var(--ds-component-status-fg-success-subtle); }
+.ds-stat[data-trend="down"] { --_trend: var(--ds-component-status-fg-error-subtle); }
+.ds-stat[data-trend="flat"] { --_trend: var(--ds-component-status-fg-neutral-subtle); }
+@media (forced-colors: active) {
+  .ds-stat { forced-color-adjust: none; color: CanvasText; }
+  .ds-stat__label, .ds-stat__value, .ds-stat__change, .ds-stat__period, .ds-stat__delta > svg { color: CanvasText; }
+}

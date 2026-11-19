@@ -1,0 +1,39 @@
+/* Toast: a short message that floats above the page. Source of truth: Figma "Toast" page. Presentational; the host places it.
+   Raised surface, overlay shadow, status rail, spacing-4 on the start edge. */
+.ds-toast {
+  --_fg: var(--ds-component-status-fg-neutral-subtle);
+  display: flex;
+  align-items: center;
+  gap: var(--ds-spacing-8);
+  box-sizing: border-box;
+  width: var(--ds-container-toast);
+  max-width: 100%;
+  padding: var(--ds-spacing-8) var(--ds-spacing-8) var(--ds-spacing-8) var(--ds-spacing-12);
+  border-radius: var(--ds-radius-md-8);
+  background: var(--ds-colour-surface-raised);
+  /* The 1 edge is an inset shadow so it does not add to the 40 height, as the Figma stroke (inside) does not */
+  box-shadow: inset 0 0 0 var(--ds-stroke-border) var(--ds-colour-border-subtle), var(--ds-elevation-overlay);
+  position: relative;
+  overflow: hidden;
+  color: var(--ds-colour-text-primary);
+  font-family: var(--ds-type-font-text), system-ui, sans-serif;
+  font-size: var(--ds-type-fs-body);
+  line-height: var(--ds-type-line-body);
+}
+.ds-toast__icon { flex: none; color: var(--_fg); }
+/* Rail: 4 wide on the start edge, over the border, in the status colour (Figma: absolute, x 0, full height) */
+.ds-toast::before { content: ""; position: absolute; inset-block: 0; inset-inline-start: 0; width: var(--ds-spacing-4); background: var(--_fg); }
+.ds-toast__text { flex: 1; min-width: 0; }
+/* The 32 close button is taller than the 24 row; Figma lets it reach into the padding, so a one-line toast is 40 tall */
+.ds-toast__close { margin-block: calc(var(--ds-spacing-4) * -1); }
+.ds-toast[data-status="neutral"] { --_fg: var(--ds-component-status-fg-neutral-subtle); }
+.ds-toast[data-status="success"] { --_fg: var(--ds-component-status-fg-success-subtle); }
+.ds-toast[data-status="warning"] { --_fg: var(--ds-component-status-fg-warning-subtle); }
+.ds-toast[data-status="error"] { --_fg: var(--ds-component-status-fg-error-subtle); }
+.ds-toast[data-status="info"] { --_fg: var(--ds-component-status-fg-info-subtle); }
+
+@media (forced-colors: active) {
+  .ds-toast { forced-color-adjust: none; border: var(--ds-stroke-border) solid CanvasText; box-shadow: none; background: Canvas; color: CanvasText; }
+  .ds-toast__icon { color: CanvasText; }
+  .ds-toast::before { background: CanvasText; }
+}

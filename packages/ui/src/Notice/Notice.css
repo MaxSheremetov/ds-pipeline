@@ -1,0 +1,60 @@
+/* Notice: an inline message that stays in the page flow. Source of truth: Figma "Notice" page (Status x Style).
+   The only edge is a 6 wide rail on the start side, in components/status/border-<status>-<style> (Figma: left stroke 6, inside). */
+.ds-notice {
+  --_bg: var(--ds-colour-surface-sunken);
+  --_bd: var(--ds-component-status-border-info-subtle);
+  --_fg: var(--ds-component-status-fg-info-subtle);
+  --_body: var(--ds-component-status-body-info-subtle);
+  --_ov: var(--ds-component-status-overlay-info-subtle);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--ds-spacing-8);
+  box-sizing: border-box;
+  max-width: var(--ds-container-notice);
+  padding: var(--ds-spacing-12);
+  border: 0;
+  border-inline-start: var(--ds-spacing-6) solid var(--_bd);
+  border-radius: var(--ds-radius-xs-4);
+  background: var(--_bg);
+  color: var(--_fg);
+  --ds-interactive-fg: var(--_fg);
+  --ds-interactive-overlay: var(--_ov);
+}
+.ds-notice__icon { flex: none; }
+.ds-notice__content { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: var(--ds-spacing-4); }
+.ds-notice__title {
+  font-family: var(--ds-type-font-mono), ui-monospace, monospace;
+  font-size: var(--ds-type-fs-body);
+  line-height: var(--ds-type-line-body);
+  font-weight: var(--ds-type-weight-regular);
+  color: var(--_fg);
+}
+.ds-notice__message {
+  font-family: var(--ds-type-font-text), system-ui, sans-serif;
+  font-size: var(--ds-type-fs-meta);
+  line-height: var(--ds-type-line-meta);
+  color: var(--_body);
+}
+.ds-notice__actions { display: flex; flex-wrap: wrap; gap: var(--ds-spacing-8); margin-block-start: var(--ds-spacing-4); }
+.ds-notice__close { margin-block: calc(var(--ds-spacing-8) * -1); margin-inline-end: calc(var(--ds-spacing-8) * -1); }
+
+.ds-notice[data-status="neutral"][data-style="subtle"] { --_bg: var(--ds-colour-surface-sunken); --_bd: var(--ds-component-status-border-neutral-solid); --_fg: var(--ds-component-status-fg-neutral-subtle); --_body: var(--ds-component-status-body-neutral-subtle); --_ov: var(--ds-component-status-overlay-neutral-subtle); }
+.ds-notice[data-status="neutral"][data-style="outline"] { --_bg: var(--ds-colour-surface-sunken); --_bd: var(--ds-component-status-border-neutral-outline); --_fg: var(--ds-component-status-fg-neutral-outline); --_body: var(--ds-component-status-body-neutral-outline); --_ov: var(--ds-component-status-overlay-neutral-outline); }
+.ds-notice[data-status="neutral"][data-style="solid"] { --_bg: var(--ds-component-status-bg-neutral-solid); --_bd: var(--ds-component-status-border-neutral-solid); --_fg: var(--ds-component-status-fg-neutral-solid); --_body: var(--ds-component-status-body-neutral-solid); --_ov: var(--ds-component-status-overlay-neutral-solid); }
+.ds-notice[data-status="success"][data-style="subtle"] { --_bg: var(--ds-colour-surface-sunken); --_bd: var(--ds-component-status-border-success-solid); --_fg: var(--ds-component-status-fg-success-subtle); --_body: var(--ds-component-status-body-success-subtle); --_ov: var(--ds-component-status-overlay-success-subtle); }
+.ds-notice[data-status="success"][data-style="outline"] { --_bg: var(--ds-colour-surface-sunken); --_bd: var(--ds-component-status-border-success-outline); --_fg: var(--ds-component-status-fg-success-outline); --_body: var(--ds-component-status-body-success-outline); --_ov: var(--ds-component-status-overlay-success-outline); }
+.ds-notice[data-status="success"][data-style="solid"] { --_bg: var(--ds-component-status-bg-success-solid); --_bd: var(--ds-component-status-border-success-solid); --_fg: var(--ds-component-status-fg-success-solid); --_body: var(--ds-component-status-body-success-solid); --_ov: var(--ds-component-status-overlay-success-solid); }
+.ds-notice[data-status="warning"][data-style="subtle"] { --_bg: var(--ds-colour-surface-sunken); --_bd: var(--ds-component-status-border-warning-solid); --_fg: var(--ds-component-status-fg-warning-subtle); --_body: var(--ds-component-status-body-warning-subtle); --_ov: var(--ds-component-status-overlay-warning-subtle); }
+.ds-notice[data-status="warning"][data-style="outline"] { --_bg: var(--ds-colour-surface-sunken); --_bd: var(--ds-component-status-border-warning-outline); --_fg: var(--ds-component-status-fg-warning-outline); --_body: var(--ds-component-status-body-warning-outline); --_ov: var(--ds-component-status-overlay-warning-outline); }
+.ds-notice[data-status="warning"][data-style="solid"] { --_bg: var(--ds-component-status-bg-warning-solid); --_bd: var(--ds-component-status-border-warning-solid); --_fg: var(--ds-component-status-fg-warning-solid); --_body: var(--ds-component-status-body-warning-solid); --_ov: var(--ds-component-status-overlay-warning-solid); }
+.ds-notice[data-status="error"][data-style="subtle"] { --_bg: var(--ds-colour-surface-sunken); --_bd: var(--ds-component-status-border-error-solid); --_fg: var(--ds-component-status-fg-error-subtle); --_body: var(--ds-component-status-body-error-subtle); --_ov: var(--ds-component-status-overlay-error-subtle); }
+.ds-notice[data-status="error"][data-style="outline"] { --_bg: var(--ds-colour-surface-sunken); --_bd: var(--ds-component-status-border-error-outline); --_fg: var(--ds-component-status-fg-error-outline); --_body: var(--ds-component-status-body-error-outline); --_ov: var(--ds-component-status-overlay-error-outline); }
+.ds-notice[data-status="error"][data-style="solid"] { --_bg: var(--ds-component-status-bg-error-solid); --_bd: var(--ds-component-status-border-error-solid); --_fg: var(--ds-component-status-fg-error-solid); --_body: var(--ds-component-status-body-error-solid); --_ov: var(--ds-component-status-overlay-error-solid); }
+.ds-notice[data-status="info"][data-style="subtle"] { --_bg: var(--ds-colour-surface-sunken); --_bd: var(--ds-component-status-border-info-solid); --_fg: var(--ds-component-status-fg-info-subtle); --_body: var(--ds-component-status-body-info-subtle); --_ov: var(--ds-component-status-overlay-info-subtle); }
+.ds-notice[data-status="info"][data-style="outline"] { --_bg: var(--ds-colour-surface-sunken); --_bd: var(--ds-component-status-border-info-outline); --_fg: var(--ds-component-status-fg-info-outline); --_body: var(--ds-component-status-body-info-outline); --_ov: var(--ds-component-status-overlay-info-outline); }
+.ds-notice[data-status="info"][data-style="solid"] { --_bg: var(--ds-component-status-bg-info-solid); --_bd: var(--ds-component-status-border-info-solid); --_fg: var(--ds-component-status-fg-info-solid); --_body: var(--ds-component-status-body-info-solid); --_ov: var(--ds-component-status-overlay-info-solid); }
+
+@media (forced-colors: active) {
+  .ds-notice { forced-color-adjust: none; border-color: CanvasText; background: Canvas; color: CanvasText; }
+  .ds-notice__title, .ds-notice__message { color: CanvasText; }
+}

@@ -1,0 +1,94 @@
+/* Tabs: Tab item (Underline, Enclosed, Segmented), the tab bar and the Segmented control. Values come only from tokens.
+   Source of truth: Figma "Tabs and Segmented control", Northgate. One item, the bar sets the style once and the items read it. */
+.ds-tabs { display: flex; flex-direction: column; min-width: 0; }
+.ds-tab-list { display: flex; align-items: stretch; box-sizing: border-box; }
+.ds-tabs[data-appearance="underline"] > .ds-tab-list,
+.ds-tabs[data-appearance="enclosed"] > .ds-tab-list { border-bottom: var(--ds-stroke-border) solid var(--ds-colour-border-subtle); }
+.ds-tabs[data-appearance="segmented"] > .ds-tab-list {
+  align-self: flex-start;
+  gap: var(--ds-spacing-2);
+  border: var(--ds-stroke-border) solid var(--ds-component-tab-track-border-segmented);
+  border-radius: var(--ds-radius-xs-4);
+  background: var(--ds-component-tab-track-segmented);
+  overflow: hidden;
+}
+
+.ds-tab {
+  --_bg: var(--ds-component-tab-bg-standalone);
+  --_fg: var(--ds-component-tab-fg-standalone);
+  --_bd: var(--ds-colour-border-transparent);
+  --_ind: transparent;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ds-spacing-8);
+  box-sizing: border-box;
+  height: var(--ds-spacing-40);
+  margin: 0;
+  padding: 0 var(--ds-spacing-12);
+  border: var(--ds-stroke-border) solid var(--_bd);
+  border-radius: var(--ds-radius-xs-4) var(--ds-radius-xs-4) 0 0;
+  background: var(--_bg);
+  color: var(--_fg);
+  font-family: var(--ds-type-font-text), system-ui, sans-serif;
+  font-size: var(--ds-type-fs-body);
+  line-height: var(--ds-type-line-body);
+  font-weight: var(--ds-type-weight-regular);
+  letter-spacing: var(--ds-type-track-none);
+  white-space: nowrap;
+  cursor: pointer;
+}
+.ds-tabs[data-appearance="segmented"] .ds-tab { border-radius: 0; }
+.ds-tab > svg { flex: none; }
+.ds-tab__count { font-size: var(--ds-type-fs-meta); line-height: var(--ds-type-line-meta); }
+/* The selected mark: 2px along the bottom edge (Figma "Indicator", tab/indicator-*) */
+.ds-tab::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: var(--ds-spacing-2);
+  background: var(--_ind);
+  pointer-events: none;
+}
+
+/* States per style: Default, Hover, Selected, Selected hover, Disabled */
+.ds-tabs[data-appearance="underline"] .ds-tab { --_bg: var(--ds-component-tab-bg-underline-default); --_fg: var(--ds-component-tab-fg-underline-default); --_bd: var(--ds-component-tab-border-underline); }
+.ds-tabs[data-appearance="underline"] .ds-tab:hover:not([data-disabled]) { --_bg: var(--ds-component-tab-bg-underline-hover); --_fg: var(--ds-component-tab-fg-underline-hover); --_bd: var(--ds-component-tab-border-underline); }
+.ds-tabs[data-appearance="underline"] .ds-tab[data-state="active"] { --_bg: var(--ds-component-tab-bg-underline-selected); --_fg: var(--ds-component-tab-fg-underline-selected); --_bd: var(--ds-component-tab-border-underline); --_ind: var(--ds-component-tab-indicator-underline-selected); }
+.ds-tabs[data-appearance="underline"] .ds-tab[data-state="active"]:hover:not([data-disabled]) { --_bg: var(--ds-component-tab-bg-underline-selected-hover); --_fg: var(--ds-component-tab-fg-underline-selected-hover); --_bd: var(--ds-component-tab-border-underline); }
+.ds-tabs[data-appearance="underline"] .ds-tab[data-disabled] { --_bg: var(--ds-component-tab-bg-underline-disabled); --_fg: var(--ds-component-tab-fg-underline-disabled); cursor: not-allowed; }
+
+.ds-tabs[data-appearance="enclosed"] .ds-tab { --_bg: var(--ds-component-tab-bg-enclosed-default); --_fg: var(--ds-component-tab-fg-enclosed-default); --_bd: var(--ds-component-tab-border-enclosed-default); }
+.ds-tabs[data-appearance="enclosed"] .ds-tab:hover:not([data-disabled]) { --_bg: var(--ds-component-tab-bg-enclosed-hover); --_fg: var(--ds-component-tab-fg-enclosed-hover); --_bd: var(--ds-component-tab-border-enclosed-hover); }
+.ds-tabs[data-appearance="enclosed"] .ds-tab[data-state="active"] { --_bg: var(--ds-component-tab-bg-enclosed-selected); --_fg: var(--ds-component-tab-fg-enclosed-selected); --_bd: var(--ds-component-tab-border-enclosed-selected); --_ind: var(--ds-component-tab-indicator-enclosed-selected); }
+.ds-tabs[data-appearance="enclosed"] .ds-tab[data-state="active"]:hover:not([data-disabled]) { --_bg: var(--ds-component-tab-bg-enclosed-selected-hover); --_fg: var(--ds-component-tab-fg-enclosed-selected-hover); --_bd: var(--ds-component-tab-border-enclosed-selected-hover); }
+.ds-tabs[data-appearance="enclosed"] .ds-tab[data-disabled] { --_bg: var(--ds-component-tab-bg-enclosed-disabled); --_fg: var(--ds-component-tab-fg-enclosed-disabled); cursor: not-allowed; }
+
+.ds-tabs[data-appearance="segmented"] .ds-tab { --_bg: var(--ds-component-tab-bg-segmented-default); --_fg: var(--ds-component-tab-fg-segmented-default); --_bd: var(--ds-component-tab-border-segmented-default); }
+.ds-tabs[data-appearance="segmented"] .ds-tab:hover:not([data-disabled]) { --_bg: var(--ds-component-tab-bg-segmented-hover); --_fg: var(--ds-component-tab-fg-segmented-hover); --_bd: var(--ds-component-tab-border-segmented-hover); }
+.ds-tabs[data-appearance="segmented"] .ds-tab[data-state="active"] { --_bg: var(--ds-component-tab-bg-segmented-selected); --_fg: var(--ds-component-tab-fg-segmented-selected); --_bd: var(--ds-component-tab-border-segmented-selected); }
+.ds-tabs[data-appearance="segmented"] .ds-tab[data-state="active"]:hover:not([data-disabled]) { --_bg: var(--ds-component-tab-bg-segmented-selected-hover); --_fg: var(--ds-component-tab-fg-segmented-selected-hover); --_bd: var(--ds-component-tab-border-segmented-selected-hover); }
+.ds-tabs[data-appearance="segmented"] .ds-tab[data-disabled] { --_bg: var(--ds-component-tab-bg-segmented-disabled); --_fg: var(--ds-component-tab-fg-segmented-disabled); cursor: not-allowed; }
+
+/* Focus: a 2px ring in border/focus inside the item (Figma "Focus ring") */
+.ds-tab:focus-visible {
+  outline: var(--ds-stroke-focus) solid var(--ds-colour-border-focus);
+  outline-offset: calc(var(--ds-stroke-focus) * -1);
+  border-radius: var(--ds-radius-xxs-2);
+}
+.ds-tab-panel { min-width: 0; }
+.ds-tab-panel:focus-visible { outline: var(--ds-stroke-focus) solid var(--ds-colour-border-focus); outline-offset: var(--ds-spacing-2); }
+
+@media (forced-colors: active) {
+  .ds-tab { forced-color-adjust: none; background: Canvas; color: CanvasText; border-color: transparent; }
+  .ds-tab[data-state="active"] { border-color: CanvasText; }
+  .ds-tab[data-state="active"]::after { background: CanvasText; }
+  .ds-tab[data-disabled] { color: GrayText; }
+  .ds-tabs[data-appearance="segmented"] > .ds-tab-list { border-color: CanvasText; background: Canvas; }
+  .ds-tabs[data-appearance="underline"] > .ds-tab-list,
+  .ds-tabs[data-appearance="enclosed"] > .ds-tab-list { border-bottom-color: CanvasText; }
+  .ds-tab:focus-visible { outline-color: Highlight; }
+}

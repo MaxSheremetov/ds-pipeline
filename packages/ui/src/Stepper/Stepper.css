@@ -1,0 +1,43 @@
+/* Stepper. Source of truth: Figma "Stepper" page: Step (State) and the connector. Disc 28 (container-stepper-disc), 2 border inside,
+   number in the mono face; Done shows a tick. Label 12/18 under the disc, gap 8. Connector 2 tall, fills the space between steps. */
+.ds-stepper { display: flex; align-items: flex-start; gap: var(--ds-spacing-8); margin: 0; padding: 0; list-style: none; font-family: var(--ds-type-font-text), system-ui, sans-serif; }
+.ds-step { display: flex; align-items: flex-start; gap: var(--ds-spacing-8); flex: 1 1 0; min-width: 0; }
+.ds-step:last-child { flex: none; }
+.ds-step__item { display: flex; flex-direction: column; align-items: center; gap: var(--ds-spacing-8); flex: none; }
+.ds-step__disc {
+  --_bg: var(--ds-component-stepper-bg-upcoming);
+  --_bd: var(--ds-component-stepper-border-upcoming);
+  --_num: var(--ds-component-stepper-number-upcoming);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: var(--ds-container-stepper-disc);
+  height: var(--ds-container-stepper-disc);
+  border: var(--ds-spacing-2) solid var(--_bd);
+  border-radius: var(--ds-radius-full);
+  background: var(--_bg);
+  color: var(--_num);
+}
+.ds-step__number { font-family: var(--ds-type-font-mono), ui-monospace, monospace; font-size: var(--ds-type-fs-body); line-height: var(--ds-type-line-body); }
+.ds-step__label { font-size: var(--ds-type-fs-meta); line-height: var(--ds-type-line-meta); color: var(--ds-component-stepper-label-upcoming); white-space: nowrap; }
+.ds-step__connector {
+  --_line: var(--ds-component-stepper-connector-upcoming);
+  flex: 1 1 auto;
+  min-width: var(--ds-spacing-8);
+  height: var(--ds-spacing-2);
+  margin-block-start: calc((var(--ds-container-stepper-disc) - var(--ds-spacing-2)) / 2);
+  background: var(--_line);
+}
+.ds-step[data-state="current"] .ds-step__disc { --_bg: var(--ds-component-stepper-bg-current); --_bd: var(--ds-component-stepper-border-current); --_num: var(--ds-component-stepper-number-current); }
+.ds-step[data-state="current"] .ds-step__label { color: var(--ds-component-stepper-label-current); }
+.ds-step[data-state="current"] .ds-step__connector { --_line: var(--ds-component-stepper-connector-current); }
+.ds-step[data-state="done"] .ds-step__disc { --_bg: var(--ds-component-stepper-bg-done); --_bd: var(--ds-component-stepper-border-done); --_num: var(--ds-colour-text-primary); }
+.ds-step[data-state="done"] .ds-step__label { color: var(--ds-component-stepper-label-done); }
+.ds-step[data-state="done"] .ds-step__connector { --_line: var(--ds-component-stepper-connector-done); }
+@media (forced-colors: active) {
+  .ds-step__disc { forced-color-adjust: none; background: Canvas; color: CanvasText; border-color: CanvasText; }
+  .ds-step[data-state="current"] .ds-step__disc { background: Highlight; color: HighlightText; border-color: Highlight; }
+  .ds-step__label { forced-color-adjust: none; color: CanvasText; }
+  .ds-step__connector { forced-color-adjust: none; background: CanvasText; }
+}

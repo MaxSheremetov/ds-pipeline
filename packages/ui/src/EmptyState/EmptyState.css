@@ -1,0 +1,33 @@
+/* Empty state. Source of truth: Figma "Empty state" page. Centred column, padding 48 and 12, gap 12; text gap 6. */
+.ds-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--ds-spacing-12);
+  box-sizing: border-box;
+  padding: var(--ds-spacing-48) var(--ds-spacing-12);
+  text-align: center;
+  color: var(--ds-colour-text-primary);
+  font-family: var(--ds-type-font-text), system-ui, sans-serif;
+}
+.ds-empty__icon { color: var(--ds-component-icon-fg-standalone); }
+.ds-empty__text { display: flex; flex-direction: column; align-items: center; gap: var(--ds-spacing-6); max-width: 100%; }
+.ds-empty__title {
+  margin: 0;
+  font-size: var(--ds-type-fs-section);
+  line-height: var(--ds-type-line-section);
+  font-weight: var(--ds-type-weight-semibold);
+  color: var(--ds-colour-text-primary);
+}
+.ds-empty__description {
+  margin: 0;
+  max-width: var(--ds-container-empty-text);
+  font-size: var(--ds-type-fs-body);
+  line-height: var(--ds-type-line-body);
+  color: var(--ds-colour-text-dim);
+}
+.ds-empty__actions { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--ds-spacing-8); }
+@media (forced-colors: active) {
+  .ds-empty { forced-color-adjust: none; color: CanvasText; }
+  .ds-empty__icon, .ds-empty__title, .ds-empty__description { color: CanvasText; }
+}

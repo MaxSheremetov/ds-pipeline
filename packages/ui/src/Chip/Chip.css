@@ -1,0 +1,58 @@
+/* Chip. Values come only from tokens. Source of truth: Figma "Badge, Chip, Interactive icon" page, Northgate.
+   Same Status x Style axes as Badge; heights are the control heights (40, 32, 24) and the label follows the Button scale (14, 12, 11). The remove button is the Figma "Interactive icon" (Small, 24). */
+.ds-chip {
+  --_bg: var(--ds-component-status-bg-neutral-subtle);
+  --_bd: var(--ds-component-status-border-neutral-subtle);
+  --_fg: var(--ds-component-status-fg-neutral-subtle);
+  --_ov: var(--ds-component-status-overlay-neutral-subtle);
+  --_h: var(--ds-spacing-32);
+  --_r: var(--ds-radius-xs-4);
+  --_fs: var(--ds-type-fs-body);
+  --_lh: var(--ds-type-line-body);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ds-spacing-4);
+  box-sizing: border-box;
+  height: var(--_h);
+  padding: 0 var(--ds-spacing-8);
+  border: var(--ds-stroke-border) solid var(--_bd);
+  border-radius: var(--_r);
+  background: var(--_bg);
+  color: var(--_fg);
+  font-family: var(--ds-type-font-text), system-ui, sans-serif;
+  font-size: var(--_fs);
+  line-height: var(--_lh);
+  font-weight: var(--ds-type-weight-regular);
+  letter-spacing: var(--ds-type-track-none);
+  white-space: nowrap;
+}
+.ds-chip[data-removable="true"] { padding-right: var(--ds-spacing-4); }
+.ds-chip[data-size="large"] { --_h: var(--ds-spacing-40); }
+/* Label follows the Button scale: 14/22, 12/18, 11/16 */
+.ds-chip[data-size="medium"] { --_fs: var(--ds-type-fs-meta); --_lh: var(--ds-type-line-meta); }
+.ds-chip[data-size="small"] { --_h: var(--ds-spacing-24); --_r: var(--ds-radius-xxs-2); --_fs: var(--ds-type-fs-micro); --_lh: var(--ds-type-line-micro); }
+.ds-chip__label { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.ds-chip > svg { flex: none; }
+
+/* Remove button: the Interactive icon (Small, 24 with a 12 icon), tinted with the chip's own text and overlay colours */
+.ds-chip { --ds-interactive-fg: var(--_fg); --ds-interactive-overlay: var(--_ov); }
+
+.ds-chip[data-status="neutral"][data-style="subtle"] { --_bg: var(--ds-component-status-bg-neutral-subtle); --_bd: var(--ds-component-status-border-neutral-subtle); --_fg: var(--ds-component-status-fg-neutral-subtle); --_ov: var(--ds-component-status-overlay-neutral-subtle); }
+.ds-chip[data-status="neutral"][data-style="outline"] { --_bg: var(--ds-component-status-bg-neutral-outline); --_bd: var(--ds-component-status-border-neutral-outline); --_fg: var(--ds-component-status-fg-neutral-outline); --_ov: var(--ds-component-status-overlay-neutral-outline); }
+.ds-chip[data-status="neutral"][data-style="solid"] { --_bg: var(--ds-component-status-bg-neutral-solid); --_bd: var(--ds-component-status-border-neutral-solid); --_fg: var(--ds-component-chip-fg-neutral-solid); --_ov: var(--ds-component-status-overlay-neutral-solid); }
+.ds-chip[data-status="success"][data-style="subtle"] { --_bg: var(--ds-component-status-bg-success-subtle); --_bd: var(--ds-component-status-border-success-subtle); --_fg: var(--ds-component-status-fg-success-subtle); --_ov: var(--ds-component-status-overlay-success-subtle); }
+.ds-chip[data-status="success"][data-style="outline"] { --_bg: var(--ds-component-status-bg-success-outline); --_bd: var(--ds-component-status-border-success-outline); --_fg: var(--ds-component-status-fg-success-outline); --_ov: var(--ds-component-status-overlay-success-outline); }
+.ds-chip[data-status="success"][data-style="solid"] { --_bg: var(--ds-component-status-bg-success-solid); --_bd: var(--ds-component-status-border-success-solid); --_fg: var(--ds-component-chip-fg-success-solid); --_ov: var(--ds-component-status-overlay-success-solid); }
+.ds-chip[data-status="warning"][data-style="subtle"] { --_bg: var(--ds-component-status-bg-warning-subtle); --_bd: var(--ds-component-status-border-warning-subtle); --_fg: var(--ds-component-status-fg-warning-subtle); --_ov: var(--ds-component-status-overlay-warning-subtle); }
+.ds-chip[data-status="warning"][data-style="outline"] { --_bg: var(--ds-component-status-bg-warning-outline); --_bd: var(--ds-component-status-border-warning-outline); --_fg: var(--ds-component-status-fg-warning-outline); --_ov: var(--ds-component-status-overlay-warning-outline); }
+.ds-chip[data-status="warning"][data-style="solid"] { --_bg: var(--ds-component-status-bg-warning-solid); --_bd: var(--ds-component-status-border-warning-solid); --_fg: var(--ds-component-chip-fg-warning-solid); --_ov: var(--ds-component-status-overlay-warning-solid); }
+.ds-chip[data-status="error"][data-style="subtle"] { --_bg: var(--ds-component-status-bg-error-subtle); --_bd: var(--ds-component-status-border-error-subtle); --_fg: var(--ds-component-status-fg-error-subtle); --_ov: var(--ds-component-status-overlay-error-subtle); }
+.ds-chip[data-status="error"][data-style="outline"] { --_bg: var(--ds-component-status-bg-error-outline); --_bd: var(--ds-component-status-border-error-outline); --_fg: var(--ds-component-status-fg-error-outline); --_ov: var(--ds-component-status-overlay-error-outline); }
+.ds-chip[data-status="error"][data-style="solid"] { --_bg: var(--ds-component-status-bg-error-solid); --_bd: var(--ds-component-status-border-error-solid); --_fg: var(--ds-component-chip-fg-error-solid); --_ov: var(--ds-component-status-overlay-error-solid); }
+.ds-chip[data-status="info"][data-style="subtle"] { --_bg: var(--ds-component-status-bg-info-subtle); --_bd: var(--ds-component-status-border-info-subtle); --_fg: var(--ds-component-status-fg-info-subtle); --_ov: var(--ds-component-status-overlay-info-subtle); }
+.ds-chip[data-status="info"][data-style="outline"] { --_bg: var(--ds-component-status-bg-info-outline); --_bd: var(--ds-component-status-border-info-outline); --_fg: var(--ds-component-status-fg-info-outline); --_ov: var(--ds-component-status-overlay-info-outline); }
+.ds-chip[data-status="info"][data-style="solid"] { --_bg: var(--ds-component-status-bg-info-solid); --_bd: var(--ds-component-status-border-info-solid); --_fg: var(--ds-component-chip-fg-info-solid); --_ov: var(--ds-component-status-overlay-info-solid); }
+
+@media (forced-colors: active) {
+  .ds-chip { forced-color-adjust: none; border-color: CanvasText; background: Canvas; color: CanvasText; }
+}

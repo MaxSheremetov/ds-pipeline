@@ -1,0 +1,31 @@
+/* File row. Source of truth: Figma "File upload" page, File row (State). Row padding 8, gap 8, radius xs-4, 1 border/subtle;
+   file icon 20 in the status colour, name 12/18, size in the mono face, status icon 16, 32 icon buttons. */
+.ds-file-row {
+  --_bg: var(--ds-colour-surface-raised);
+  --_bd: var(--ds-colour-border-subtle);
+  --_fg: var(--ds-component-status-fg-info-subtle);
+  display: flex;
+  align-items: center;
+  gap: var(--ds-spacing-8);
+  box-sizing: border-box;
+  padding: var(--ds-spacing-8);
+  border: var(--ds-stroke-border) solid var(--_bd);
+  border-radius: var(--ds-radius-xs-4);
+  background: var(--_bg);
+  color: var(--ds-colour-text-primary);
+  font-family: var(--ds-type-font-text), system-ui, sans-serif;
+  font-size: var(--ds-type-fs-meta);
+  line-height: var(--ds-type-line-meta);
+}
+.ds-file-row[data-status="done"] { --_bg: var(--ds-component-status-bg-success-subtle); --_fg: var(--ds-component-status-fg-success-subtle); }
+.ds-file-row[data-status="error"] { --_bg: var(--ds-component-status-bg-error-subtle); --_bd: var(--ds-component-status-border-error-outline); --_fg: var(--ds-component-status-fg-error-subtle); }
+.ds-file-row__file, .ds-file-row__status { color: var(--_fg); }
+.ds-file-row__text { display: flex; flex-direction: column; gap: var(--ds-spacing-4); flex: 1 1 auto; min-width: 0; }
+.ds-file-row__name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--ds-colour-text-primary); }
+.ds-file-row__message { color: var(--ds-component-status-fg-error-subtle); }
+.ds-file-row__size { flex: none; font-family: var(--ds-type-font-mono), ui-monospace, monospace; color: var(--ds-colour-text-dim); }
+@media (forced-colors: active) {
+  .ds-file-row { forced-color-adjust: none; background: Canvas; color: CanvasText; border-color: CanvasText; }
+  .ds-file-row__file, .ds-file-row__status, .ds-file-row__name, .ds-file-row__message, .ds-file-row__size { color: CanvasText; }
+  .ds-file-row[data-status="error"] { border-style: dashed; }
+}

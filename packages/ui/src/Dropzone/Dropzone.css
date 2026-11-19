@@ -1,0 +1,29 @@
+/* Dropzone. Source of truth: Figma "File upload" page, Dropzone (State). Centred column, padding 32 and 12, gap 8, radius md-8,
+   2 dashed border; neutral, info while a file is dragged over, error after a failure. */
+.ds-dropzone {
+  --_bg: var(--ds-component-status-bg-neutral-subtle);
+  --_fg: var(--ds-component-status-fg-neutral-subtle);
+  --_body: var(--ds-component-status-body-neutral-subtle);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--ds-spacing-8);
+  box-sizing: border-box;
+  padding: var(--ds-spacing-32) var(--ds-spacing-12);
+  border: var(--ds-spacing-2) dashed var(--_fg);
+  border-radius: var(--ds-radius-md-8);
+  background: var(--_bg);
+  color: var(--_fg);
+  font-family: var(--ds-type-font-text), system-ui, sans-serif;
+  text-align: center;
+}
+.ds-dropzone[data-state="dragging"] { --_bg: var(--ds-component-status-bg-info-subtle); --_fg: var(--ds-component-status-fg-info-subtle); --_body: var(--ds-component-status-body-info-subtle); }
+.ds-dropzone[data-state="error"] { --_bg: var(--ds-component-status-bg-error-subtle); --_fg: var(--ds-component-status-fg-error-subtle); --_body: var(--ds-component-status-body-error-subtle); }
+.ds-dropzone__icon { color: var(--_fg); }
+.ds-dropzone__title { font-size: var(--ds-type-fs-body); line-height: var(--ds-type-line-body); font-weight: var(--ds-type-weight-medium); color: var(--_fg); }
+.ds-dropzone__hint { font-size: var(--ds-type-fs-meta); line-height: var(--ds-type-line-meta); color: var(--_body); }
+@media (forced-colors: active) {
+  .ds-dropzone { forced-color-adjust: none; background: Canvas; color: CanvasText; border-color: CanvasText; }
+  .ds-dropzone[data-state="dragging"] { border-color: Highlight; }
+  .ds-dropzone__icon, .ds-dropzone__title, .ds-dropzone__hint { color: CanvasText; }
+}

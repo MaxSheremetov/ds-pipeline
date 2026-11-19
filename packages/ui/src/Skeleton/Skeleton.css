@@ -1,0 +1,20 @@
+/* Skeleton: a quiet placeholder that pulses between surface/sunken (Dim) and surface/hover (Bright). Source of truth: Figma "Skeleton" (Shape x Pulse). */
+.ds-skeleton {
+  --_w: var(--ds-container-skeleton);
+  --_h: var(--ds-spacing-12);
+  --_r: var(--ds-radius-full);
+  display: block;
+  box-sizing: border-box;
+  width: var(--_w);
+  height: var(--_h);
+  border-radius: var(--_r);
+  background: var(--ds-colour-surface-sunken);
+  animation: ds-skeleton-pulse 1400ms ease-in-out infinite alternate;
+}
+.ds-skeleton[data-shape="text"] { height: calc(var(--ds-spacing-12) + var(--ds-spacing-2)); }
+.ds-skeleton[data-shape="block"] { --_h: var(--ds-spacing-96); --_r: var(--ds-radius-xs-4); height: var(--_h); }
+.ds-skeleton[data-shape="circle"] { --_w: var(--ds-spacing-40); width: var(--_w); height: var(--ds-spacing-40); }
+@keyframes ds-skeleton-pulse { from { background-color: var(--ds-colour-surface-sunken); } to { background-color: var(--ds-colour-surface-hover); } }
+/* With reduced motion the pulse stops and the Dim colour stays. */
+@media (prefers-reduced-motion: reduce) { .ds-skeleton { animation: none; } }
+@media (forced-colors: active) { .ds-skeleton { forced-color-adjust: none; background: GrayText; opacity: 0.3; } }

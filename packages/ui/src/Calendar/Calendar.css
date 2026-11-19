@@ -1,0 +1,65 @@
+/* Calendar panel shared by Date picker and Date range. Source of truth: Figma "Date picker" page, Date picker and Date range.
+   Panel: surface/raised, 1 border/default, radius md-8, padding 12, gap 8 (one month) or 12 (two). Header: Icon button Quiet Medium either side.
+   Grid: seven columns of Day cells (container-day-width), rows 36 apart by 2. Footer: 1 border/subtle above, padding-top 8. */
+.ds-calendar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-spacing-8);
+  box-sizing: border-box;
+  width: max-content;
+  max-width: 100%;
+  padding: var(--ds-spacing-12);
+  border: var(--ds-stroke-border) solid var(--ds-colour-border-default);
+  border-radius: var(--ds-radius-md-8);
+  background: var(--ds-colour-surface-raised);
+  color: var(--ds-colour-text-primary);
+  font-family: var(--ds-type-font-text), system-ui, sans-serif;
+}
+.ds-calendar[data-months="2"] { gap: var(--ds-spacing-12); }
+.ds-calendar__header { display: flex; align-items: center; justify-content: space-between; gap: var(--ds-spacing-8); }
+.ds-calendar__month {
+  font-size: var(--ds-type-fs-body);
+  line-height: var(--ds-type-line-body);
+  font-weight: var(--ds-type-weight-medium);
+  color: var(--ds-colour-text-primary);
+}
+.ds-calendar__months { display: flex; gap: var(--ds-spacing-32); }
+.ds-calendar__month-block { display: flex; flex-direction: column; gap: var(--ds-spacing-8); min-width: 0; }
+.ds-calendar__grid { display: flex; flex-direction: column; gap: var(--ds-spacing-8); }
+.ds-calendar__weekdays { display: grid; grid-template-columns: repeat(7, var(--ds-container-day-width)); height: var(--ds-spacing-20); }
+.ds-calendar__weekday {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--ds-type-font-mono), ui-monospace, monospace;
+  font-size: var(--ds-type-fs-micro);
+  line-height: var(--ds-type-line-micro);
+  font-weight: var(--ds-type-weight-medium);
+  letter-spacing: var(--ds-type-track-caps);
+  color: var(--ds-colour-text-dim);
+}
+/* Five rows tall at least, so a four-week month does not make the panel jump. */
+.ds-calendar__weeks { display: flex; flex-direction: column; gap: var(--ds-spacing-2); min-height: calc(var(--ds-container-day-height) * 6 + var(--ds-spacing-2) * 5); }
+.ds-calendar__week { display: grid; grid-template-columns: repeat(7, var(--ds-container-day-width)); }
+.ds-calendar__week > [role="gridcell"] { display: flex; }
+.ds-calendar__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--ds-spacing-8);
+  padding-top: var(--ds-spacing-8);
+  border-top: var(--ds-stroke-border) solid var(--ds-colour-border-subtle);
+}
+.ds-calendar__presets { display: flex; flex-wrap: wrap; gap: var(--ds-spacing-4); }
+.ds-calendar__selected {
+  font-family: var(--ds-type-font-mono), ui-monospace, monospace;
+  font-size: var(--ds-type-fs-meta);
+  line-height: var(--ds-type-line-meta);
+  font-weight: var(--ds-type-weight-regular);
+  color: var(--ds-colour-text-dim);
+}
+@media (forced-colors: active) {
+  .ds-calendar { forced-color-adjust: none; background: Canvas; color: CanvasText; border-color: CanvasText; }
+  .ds-calendar__month, .ds-calendar__weekday, .ds-calendar__selected { color: CanvasText; }
+  .ds-calendar__footer { border-top-color: CanvasText; }
+}

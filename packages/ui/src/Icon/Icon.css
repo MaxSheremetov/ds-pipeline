@@ -1,0 +1,8 @@
+/* Icon. Size from spacing tokens, stroke from stroke/icon (1.5), colour inherited from the parent. */
+.ds-icon { --_s: var(--ds-spacing-16); width: var(--_s); height: var(--_s); flex: none; color: inherit; stroke-width: var(--ds-stroke-icon); }
+.ds-icon[data-size="12"] { --_s: var(--ds-spacing-12); }
+.ds-icon[data-size="20"] { --_s: var(--ds-spacing-20); }
+.ds-icon[data-size="24"] { --_s: var(--ds-spacing-24); }
+.ds-icon[data-size="48"] { --_s: var(--ds-spacing-48); }
+/* The stroke stays 1.5 at every size, as in Figma, instead of scaling with the 24-unit viewBox. */
+.ds-icon * { vector-effect: non-scaling-stroke; }

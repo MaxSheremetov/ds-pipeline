@@ -1,0 +1,18 @@
+/* Tooltip: a dark bubble with an 8 x 4 arrow. Source of truth: Figma "Tooltip" (Side). Fill and text are components/tooltip/*. */
+.ds-tooltip {
+  box-sizing: border-box;
+  padding: var(--ds-spacing-6) var(--ds-spacing-8);
+  border-radius: var(--ds-radius-xs-4);
+  background: var(--ds-component-tooltip-bg);
+  color: var(--ds-component-tooltip-fg);
+  font-family: var(--ds-type-font-text), system-ui, sans-serif;
+  font-size: var(--ds-type-fs-meta);
+  line-height: var(--ds-type-line-meta);
+  z-index: 1000;
+  user-select: none;
+}
+.ds-tooltip__arrow { fill: var(--ds-component-tooltip-bg); }
+@media (forced-colors: active) {
+  .ds-tooltip { forced-color-adjust: none; background: Canvas; color: CanvasText; border: var(--ds-stroke-border) solid CanvasText; }
+  .ds-tooltip__arrow { fill: CanvasText; }
+}

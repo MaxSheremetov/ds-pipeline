@@ -1,0 +1,20 @@
+/* Spinner: a 270 degree arc that turns about its centre once a second. Source of truth: Figma "Spinner" (Size).
+   The box is the icon slot (20, 16, 12); the arc inside is 14, 10, 8 across with a 2, 2, 1 stroke. Colour follows the text beside it. */
+.ds-spinner {
+  --_box: var(--ds-spacing-16);
+  --_stroke: var(--ds-stroke-focus);
+  display: inline-block;
+  flex: none;
+  position: relative;
+  width: var(--_box);
+  height: var(--_box);
+  color: var(--ds-component-icon-fg-standalone);
+}
+.ds-spinner[data-size="large"] { --_box: var(--ds-spacing-20); }
+.ds-spinner[data-size="small"] { --_box: var(--ds-spacing-12); --_stroke: var(--ds-stroke-border); }
+.ds-spinner svg { display: block; width: 100%; height: 100%; animation: ds-spinner-turn 1s linear infinite; }
+.ds-spinner path { stroke: currentColor; stroke-width: var(--_stroke); stroke-linecap: round; vector-effect: non-scaling-stroke; }
+@keyframes ds-spinner-turn { to { transform: rotate(360deg); } }
+/* A slower turn for people who ask for less motion; it still shows that something is happening. */
+@media (prefers-reduced-motion: reduce) { .ds-spinner svg { animation-duration: 3s; } }
+@media (forced-colors: active) { .ds-spinner path { stroke: CanvasText; } }

@@ -1,0 +1,7 @@
+/* Popover: a small panel anchored to its trigger. 320 wide (container-popover); body padding 12; optional footer row. */
+.ds-popover {
+  width: var(--ds-container-popover);
+  max-width: calc(100vw - var(--ds-spacing-32));
+  max-height: var(--radix-popover-content-available-height);
+  z-index: 1;
+}

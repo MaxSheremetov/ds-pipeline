@@ -1,0 +1,175 @@
+/* Select. The field reuses Input (label, field, message, sizes, state tokens); this file adds the trigger, the chevron and the menu. Source of truth: Figma "Select" page, Northgate. */
+/* The trigger is the field: it carries the Input field styles (.ds-input__field) and adds the text of a control. */
+.ds-select__trigger {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  gap: var(--ds-spacing-8);
+  color: var(--_tx);
+  font: inherit;
+  font-size: var(--_fs);
+  line-height: var(--_lh);
+  font-weight: var(--ds-type-weight-regular);
+  letter-spacing: var(--ds-type-track-none);
+  text-align: left;
+  cursor: pointer;
+  appearance: none;
+}
+.ds-select:not([data-disabled]):not([data-readonly]):not([data-invalid]) .ds-select__trigger:hover:not([data-placeholder]) { color: var(--ds-component-input-text-hover-filled); }
+.ds-select__value {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+/* Radix marks the trigger when nothing is chosen */
+.ds-select__trigger[data-placeholder] { color: var(--_ph); }
+.ds-select__trigger .ds-icon { flex: none; color: var(--_ic, var(--ds-component-input-icon-default-filled)); }
+.ds-select__trigger[data-placeholder] .ds-icon { color: var(--ds-component-input-icon-empty); }
+.ds-select:not([data-disabled]):not([data-readonly]):not([data-invalid]) .ds-select__trigger:hover .ds-icon { color: var(--ds-component-input-icon-hover-filled); }
+.ds-select[data-invalid] .ds-select__trigger .ds-icon { color: var(--ds-component-input-icon-error-filled); }
+.ds-select[data-disabled] .ds-select__trigger .ds-icon { color: var(--ds-component-input-icon-disabled-filled); }
+.ds-select[data-readonly] .ds-select__trigger .ds-icon { color: var(--ds-component-input-icon-read-only-filled); }
+.ds-select[data-disabled] .ds-select__trigger { cursor: not-allowed; }
+.ds-select[data-readonly] .ds-select__trigger { cursor: default; }
+.ds-select__trigger[data-state="open"] .ds-icon { transform: rotate(180deg); }
+
+/* The field keeps its focus look while the menu is open (focus has moved into the menu) */
+.ds-select__trigger[data-state="open"] { background: var(--ds-component-input-bg-focus-filled); }
+.ds-select__trigger[data-state="open"]::after {
+  --_off: calc(var(--ds-spacing-2) + var(--ds-stroke-focus));
+  content: "";
+  position: absolute;
+  inset: calc((var(--_off) + var(--ds-stroke-border)) * -1);
+  border-radius: var(--_rr);
+  box-shadow: inset 0 0 0 var(--ds-stroke-focus) var(--ds-component-input-border-focus-filled);
+  pointer-events: none;
+}
+
+/* Menu: portalled to the body, so the size is carried by data-size on the menu itself */
+.ds-select-menu {
+  --_oh: var(--ds-spacing-40);
+  --_opx: var(--ds-spacing-12);
+  --_ofs: var(--ds-type-fs-body);
+  --_olh: var(--ds-type-line-body);
+  z-index: 1000;
+  box-sizing: border-box;
+  width: var(--radix-select-trigger-width);
+  max-height: var(--radix-select-content-available-height);
+  overflow: hidden;
+  border: var(--ds-stroke-border) solid var(--ds-colour-border-strong);
+  border-radius: var(--ds-radius-md-8);
+  background: var(--ds-colour-surface-raised);
+  box-shadow: var(--ds-elevation-lifted);
+  font-family: var(--ds-type-font-text), system-ui, sans-serif;
+}
+.ds-select-menu[data-size="medium"] { --_oh: var(--ds-spacing-32); --_opx: var(--ds-spacing-10); }
+.ds-select-menu[data-size="small"] { --_oh: var(--ds-spacing-24); --_opx: var(--ds-spacing-8); --_ofs: var(--ds-type-fs-meta); --_olh: var(--ds-type-line-meta); }
+.ds-select-menu__list { max-height: var(--radix-select-content-available-height); overflow-y: auto; }
+
+.ds-select-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--ds-spacing-8);
+  box-sizing: border-box;
+  height: var(--_oh);
+  padding: 0 var(--_opx);
+  background: var(--ds-component-menu-bg-default);
+  color: var(--ds-component-menu-fg-default);
+  font-size: var(--_ofs);
+  line-height: var(--_olh);
+  font-weight: var(--ds-type-weight-regular);
+  letter-spacing: var(--ds-type-track-none);
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+}
+.ds-select-option__label { flex: 1; min-width: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.ds-select-option__check { display: inline-flex; flex: none; color: var(--ds-component-menu-check-selected); }
+.ds-select-option[data-highlighted] { background: var(--ds-component-menu-bg-hover); color: var(--ds-component-menu-fg-hover); }
+.ds-select-option[data-state="checked"] { background: var(--ds-component-menu-bg-selected); color: var(--ds-component-menu-fg-selected); }
+.ds-select-option[data-state="checked"][data-highlighted] { background: var(--ds-component-menu-bg-selected-hover); color: var(--ds-component-menu-fg-selected-hover); }
+.ds-select-option[data-state="checked"][data-highlighted] .ds-select-option__check { color: var(--ds-component-menu-check-selected-hover); }
+.ds-select-option[data-disabled] { background: var(--ds-component-menu-bg-disabled); color: var(--ds-component-menu-fg-disabled); cursor: not-allowed; }
+
+/* Forced colours: backgrounds are replaced, so the highlighted option takes the system selection pair and the chevron and check follow the text colour. */
+@media (forced-colors: active) {
+  .ds-select__trigger .ds-icon, .ds-select-option__check { color: CanvasText; }
+  .ds-select[data-disabled] .ds-select__trigger .ds-icon, .ds-select-option[data-disabled] { color: GrayText; }
+  .ds-select-option[data-highlighted] { background: Highlight; color: HighlightText; forced-color-adjust: none; }
+  .ds-select-option[data-highlighted] .ds-select-option__check { color: HighlightText; }
+  .ds-select-option__box { border-color: CanvasText; background: Canvas; color: CanvasText; forced-color-adjust: none; }
+  .ds-select-option[data-highlighted] .ds-select-option__box { border-color: HighlightText; background: Highlight; color: HighlightText; }
+  .ds-select-option[data-disabled] .ds-select-option__box { border-color: GrayText; color: GrayText; }
+}
+
+/* Leading icon and the chevron share the icon colours */
+.ds-select__trigger > .ds-icon:first-child:not(:last-child) { flex: none; }
+
+/* Panel menu (search and/or multiple): optional search on top (Figma "Select menu": padding 8, bottom border border/subtle), list, optional footer */
+.ds-select-menu--panel {
+  display: flex;
+  flex-direction: column;
+  width: var(--radix-popover-trigger-width);
+  max-height: var(--radix-popover-content-available-height);
+}
+.ds-select-search { flex: none; gap: 0; padding: var(--ds-spacing-8); border-bottom: var(--ds-stroke-border) solid var(--ds-colour-border-subtle); }
+.ds-select-search .ds-input__field { gap: var(--ds-spacing-8); }
+.ds-select-search .ds-icon { flex: none; color: var(--ds-component-input-icon-default-filled); }
+.ds-select-menu--panel .ds-select-menu__list { flex: 1; min-height: 0; max-height: none; }
+.ds-select-empty {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  height: var(--_oh);
+  padding: 0 var(--_opx);
+  color: var(--ds-component-menu-fg-disabled);
+  font-size: var(--_ofs);
+  line-height: var(--_olh);
+}
+
+/* Multiple selection: a 16 box with a tick on the left of the row, no check on the right (Figma option base, Show checkbox) */
+.ds-select-option[data-multiple] { justify-content: flex-start; }
+.ds-select-option__box {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: var(--ds-spacing-16);
+  height: var(--ds-spacing-16);
+  border: var(--ds-stroke-border) solid var(--ds-component-menu-box-border-default);
+  border-radius: var(--ds-radius-xs-4);
+  background: var(--ds-component-menu-box-bg-default);
+  color: var(--ds-component-menu-tick-default);
+}
+.ds-select-option__tick { width: var(--ds-spacing-8); height: var(--ds-spacing-6); }
+.ds-select-option[data-highlighted] .ds-select-option__box { border-color: var(--ds-component-menu-box-border-hover); background: var(--ds-component-menu-box-bg-hover); color: var(--ds-component-menu-tick-hover); }
+.ds-select-option[data-state="checked"] .ds-select-option__box { border-color: var(--ds-component-menu-box-border-selected); background: var(--ds-component-menu-box-bg-selected); color: var(--ds-component-menu-tick-selected); }
+.ds-select-option[data-state="checked"][data-highlighted] .ds-select-option__box { border-color: var(--ds-component-menu-box-border-selected-hover); background: var(--ds-component-menu-box-bg-selected-hover); color: var(--ds-component-menu-tick-selected-hover); }
+.ds-select-option[data-disabled] .ds-select-option__box { border-color: var(--ds-component-menu-box-border-disabled); background: var(--ds-component-menu-box-bg-disabled); color: var(--ds-component-menu-tick-disabled); }
+
+/* The list takes focus when there is no search field; the ring sits inside so the menu's overflow does not cut it */
+.ds-select-menu__list:focus-visible { outline: var(--ds-stroke-focus) solid var(--ds-colour-border-focus); outline-offset: calc(var(--ds-stroke-focus) * -1); }
+
+/* Footer of a multiple Select: count on the left, Clear on the right (Figma menu Footer) */
+.ds-select-footer {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--ds-spacing-8);
+  padding: var(--ds-spacing-8) var(--ds-spacing-12);
+  border-top: var(--ds-stroke-border) solid var(--ds-colour-border-subtle);
+  background: var(--ds-colour-surface-raised);
+}
+.ds-select-footer__count {
+  color: var(--ds-colour-text-dim);
+  font-family: var(--ds-type-font-mono), ui-monospace, monospace;
+  font-size: var(--ds-type-fs-meta);
+  line-height: var(--ds-type-line-meta);
+  font-weight: var(--ds-type-weight-regular);
+  letter-spacing: var(--ds-type-track-none);
+}

@@ -1,0 +1,99 @@
+/* Toggle. Values come only from tokens. Source of truth: Figma "Toggle" page, Northgate.
+   The input is the track (appearance none); the knob is its ::after and slides by a transform.
+   Colours are the components/checkbox/track-* and knob-* tokens. */
+.ds-toggle {
+  --_w: var(--ds-spacing-40);
+  --_h: var(--ds-spacing-24);
+  --_kn: var(--ds-spacing-20);
+  --_lfs: var(--ds-type-fs-body);
+  --_llh: var(--ds-type-line-body);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ds-spacing-8);
+  cursor: pointer;
+}
+.ds-toggle[data-size="medium"] { --_w: var(--ds-spacing-32); --_h: var(--ds-spacing-20); --_kn: var(--ds-spacing-16); }
+.ds-toggle[data-size="small"] { --_w: var(--ds-spacing-24); --_h: var(--ds-spacing-16); --_kn: var(--ds-spacing-12); --_lfs: var(--ds-type-fs-meta); --_llh: var(--ds-type-line-meta); }
+
+.ds-toggle__input {
+  --_tr: var(--ds-component-checkbox-track-off-default);
+  --_bd: transparent;
+  --_kc: var(--ds-component-checkbox-knob-off-off-default);
+  appearance: none;
+  position: relative;
+  flex: none;
+  box-sizing: border-box;
+  width: var(--_w);
+  height: var(--_h);
+  margin: 0;
+  /* The 1px border is always there, transparent when off, so the knob does not shift between values */
+  border: var(--ds-stroke-border) solid var(--_bd);
+  border-radius: var(--ds-radius-full);
+  background: var(--_tr);
+  cursor: inherit;
+  transition: background-color 120ms ease, border-color 120ms ease;
+}
+.ds-toggle__input::after {
+  content: "";
+  position: absolute;
+  top: calc(var(--ds-spacing-2) - var(--ds-stroke-border));
+  left: calc(var(--ds-spacing-2) - var(--ds-stroke-border));
+  width: var(--_kn);
+  height: var(--_kn);
+  border-radius: 50%;
+  background: var(--_kc);
+  transition: transform 120ms ease;
+}
+.ds-toggle__input:checked {
+  --_tr: var(--ds-component-checkbox-track-on-default);
+  --_bd: var(--ds-component-checkbox-track-border-on);
+  --_kc: var(--ds-component-checkbox-knob-on-on-default);
+}
+.ds-toggle__input:checked::after { transform: translateX(calc(var(--_w) - var(--_kn) - var(--ds-spacing-4))); }
+
+.ds-toggle__input:hover:not(:disabled) { --_tr: var(--ds-component-checkbox-track-off-hover); }
+.ds-toggle__input:hover:not(:disabled):checked { --_tr: var(--ds-component-checkbox-track-on-hover); }
+
+/* Focus: 2px ring in border/focus outside the track with a 2px gap, as on every other control */
+.ds-toggle__input:focus-visible {
+  outline: var(--ds-stroke-focus) solid var(--ds-colour-border-focus);
+  outline-offset: var(--ds-spacing-2);
+}
+
+.ds-toggle__input:disabled {
+  --_tr: var(--ds-component-checkbox-track-off-disabled);
+  --_kc: var(--ds-component-checkbox-knob-off-off-disabled);
+  cursor: not-allowed;
+}
+.ds-toggle__input:disabled:checked {
+  --_tr: var(--ds-component-checkbox-track-on-disabled);
+  --_bd: transparent;
+  --_kc: var(--ds-component-checkbox-knob-on-on-disabled);
+}
+
+.ds-toggle__label {
+  font-family: var(--ds-type-font-text), system-ui, sans-serif;
+  font-size: var(--_lfs);
+  line-height: var(--_llh);
+  font-weight: var(--ds-type-weight-regular);
+  letter-spacing: var(--ds-type-track-none);
+  color: var(--ds-component-checkbox-title-off-default);
+}
+.ds-toggle:has(.ds-toggle__input:disabled) { cursor: not-allowed; }
+.ds-toggle:has(.ds-toggle__input:disabled) .ds-toggle__label { color: var(--ds-component-checkbox-title-off-disabled); }
+
+@media (prefers-reduced-motion: reduce) {
+  .ds-toggle__input, .ds-toggle__input::after { transition: none; }
+}
+
+/* Forced colours: fills are replaced by the system, so the position of the knob and the border must carry the value */
+@media (forced-colors: active) {
+  .ds-toggle__input { border-color: ButtonText; background: Field; forced-color-adjust: none; }
+  .ds-toggle__input::after { background: ButtonText; forced-color-adjust: none; }
+  .ds-toggle__input:checked { background: Highlight; border-color: Highlight; }
+  .ds-toggle__input:checked::after { background: HighlightText; }
+  .ds-toggle__input:disabled, .ds-toggle__input:disabled:checked { border-color: GrayText; background: Field; }
+  .ds-toggle__input:disabled::after, .ds-toggle__input:disabled:checked::after { background: GrayText; }
+  .ds-toggle__label { color: CanvasText; }
+  .ds-toggle:has(.ds-toggle__input:disabled) .ds-toggle__label { color: GrayText; }
+}
